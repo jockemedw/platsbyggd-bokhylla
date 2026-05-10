@@ -299,37 +299,37 @@
   </section>
 
   <section id="tab-tools" class="tab">
-    <h2>Verktyg</h2>
-    <ul class="tool-list">
-      <li>Vattenpass (långt + kort)</li>
-      <li>Tumstock / måttband</li>
-      <li>Skruvdragare + bits</li>
-      <li>Borrmaskin</li>
-      <li>Sticksåg eller cirkelsåg</li>
-      <li>Bågsåg (kapa ställskruvar)</li>
-      <li>Hålsåg för infällda uttag</li>
-      <li>Dykertpistol (taklister)</li>
-      <li>Kilar för lod- och vågjustering</li>
-      <li>Tving / klamrar</li>
-      <li>Regelletare (om gips på regel)</li>
-      <li>Spackelspade</li>
-      <li>Slipkloss + slippapper (k150–220)</li>
-      <li>Penslar + roller (för luckor)</li>
-      <li>Maskeringstejp + skyddspapper</li>
-      <li>Dammsugare</li>
-    </ul>
+    <p style="font-size:13px;color:#5b5d5c;margin:0 0 18px;">Bocka av vad du har hemma. Klicka anteckningsknappen för att lägga till kommentar per verktyg.</p>
 
-    <h2>Förbrukningsmaterial</h2>
-    <ul class="tool-list">
-      <li>MDF-spackel (bänkskiveskarv, skruvhål)</li>
-      <li>Akrylf/alkydfärg slutkulör, halvmatt — 2–3 strykningar</li>
-      <li>Grundfärg (om passbitar är oprimade)</li>
-      <li>Målarfog (mot väggar)</li>
-      <li>Skruv (spånplatte / träskruv)</li>
-      <li>Dykertspik (om dykertpistol)</li>
-      <li>Maskeringstejp</li>
-      <li>Trasor + lacknafta / penseltvätt</li>
-    </ul>
+    <h2>⚡ Eldragning</h2>
+    <div class="step-group" id="tools-el">
+      <h3>Verktyg</h3>
+      <div id="tools-el-items"></div>
+    </div>
+    <div class="step-group" id="tools-el-mat">
+      <h3>Material</h3>
+      <div id="tools-el-mat-items"></div>
+    </div>
+
+    <h2>🔨 Montage</h2>
+    <div class="step-group" id="tools-montage">
+      <h3>Verktyg</h3>
+      <div id="tools-montage-items"></div>
+    </div>
+    <div class="step-group" id="tools-montage-mat">
+      <h3>Material</h3>
+      <div id="tools-montage-mat-items"></div>
+    </div>
+
+    <h2>🎨 Spackling &amp; målning</h2>
+    <div class="step-group" id="tools-malning">
+      <h3>Verktyg</h3>
+      <div id="tools-malning-items"></div>
+    </div>
+    <div class="step-group" id="tools-malning-mat">
+      <h3>Material</h3>
+      <div id="tools-malning-mat-items"></div>
+    </div>
   </section>
 
   <section id="tab-contact" class="tab">
@@ -395,6 +395,56 @@
   'use strict';
   const STORAGE_KEY = 'platsbyggd-bokhylla-v1';
 
+  const TOOLS_DATA = {
+    'el': [
+      'Skruvdragare + bits',
+      'Borrmaskin',
+      'Hålsåg för infällda uttag',
+      'Regelletare (om gips på regel)',
+      'Tumstock / måttband',
+      'Avbitartång / kabelskalare'
+    ],
+    'el-mat': [
+      'Elkabel (3G 1,5 mm²)',
+      'Kopplingsdosa (ersätter vägguttag)',
+      'Infällda uttag (6 st)',
+      'Kabelklamrar / kabelkanal',
+      'Wagokopplingar'
+    ],
+    'montage': [
+      'Vattenpass (långt + kort)',
+      'Tumstock / måttband',
+      'Skruvdragare + bits',
+      'Borrmaskin',
+      'Sticksåg eller cirkelsåg',
+      'Bågsåg (kapa ställskruvar)',
+      'Dykertpistol (taklister)',
+      'Kilar för lod- och vågjustering',
+      'Tving / klamrar',
+      'Dammsugare'
+    ],
+    'montage-mat': [
+      'Skruv (spånplatte / träskruv)',
+      'Dykertspik (om dykertpistol)',
+      'Målarfog (mot väggar)',
+      'Kilar'
+    ],
+    'malning': [
+      'Spackelspade',
+      'Slipkloss + slippapper (k150–220)',
+      'Penslar + roller (för luckor)',
+      'Maskeringstejp + skyddspapper',
+      'Dammsugare'
+    ],
+    'malning-mat': [
+      'MDF-spackel (bänkskiveskarv, skruvhål)',
+      'Akrylf/alkydfärg slutkulör, halvmatt — 2–3 strykningar',
+      'Grundfärg (om passbitar är oprimade)',
+      'Maskeringstejp',
+      'Trasor + lacknafta / penseltvätt'
+    ]
+  };
+
   const ANTON_STEPS = ["Ställ ut de nedre stommarna mot väggen. Skruva fast vita melaminlister på vänster och höger stomme där de möter väggen (för att täcklisten ska ha något att fästa i). Justera fötterna så alla står vågrätt och i rätt höjd i förhållande till varandra. Börja vänster, arbeta höger ut. Tvinga ihop stommarna allt eftersom. Om gips på regel: hitta reglarna och märk ut i överkant av stommarna. Glöm inte vänster och högervägg.", "När alla stommar står rätt: montera bänkskivorna. Utgå från mitten, kapa till rätt längd mot väggen. Grovkapa lite för lång först, justera sedan. Beroende på avstånd från vägg och önskat överhäng kan skivan behöva klyvas mot bakre väggen. Lagom överhäng framtill: 15–20 mm. Avmonterade dörrar bygger ca 20 mm.", "När bänkskivorna har rätt mått: lägg på stommarna, kontrollera passform. Ställ på bokhylledelen på rätt mått från vänstra väggen. OBS: bokhylledelen placeras 19 mm närmare vänstra väggen än nedre vänstra stommen (täcklisten ligger framför där). Placera bokhyllans framkant med samma avstånd till bänkskivans framkant som nedre stommen. Fixera bokhyllan i bänkskivan på högra sidan med vinklade hål. Skruva ihop de två vänstra stommarna med varandra och i bänkskivan underifrån.", "Ta bort högra bänkskivan och de två högra stommarna tillfälligt. Dra ihopskruvade vänstra stommar med bänkskiva och bokhylla ca 20 cm högerut, för att komma åt vänstra vinklade hålen mellan bokhylla och bänkskiva.", "Flytta tillbaka vänstra stommarna. Montera tillbaka högra stommarna och bänkskivan. Skruva ihop alla stommar med varandra, i bänkskivan och i bakre väggen högt upp i stommarna (skruvar lågt drar in stommarna i nederkant; högt motverkar bänkskivan). Skruva fast bokhyllan i bakkant och i vänster vägg.", "Montera högra täckskivan i högra väggen med orangea ställskruvarna. Korta ställskruvar med bågsåg om de är för långa. Högra täckskivan placeras med samma avstånd som bokhylla framåt och så den passar med högra passbiten på underdelen. Behöver inte gå dikt mot taket — 10 mm kortare är lagom.", "Montera de två takbitarna med samma metod. Börja från mitten — använd vattenpass och dra upp från mitten av bänkskivorna. Kapa till längd och bredd så de passar mot bokhylledelen och högra täckskivan. Utgå från undersidan av bokhyllans högsta skiva för rätt höjd. Förstärk skarven i mitten med plywoodbiten.", "Montera lådor och dörrar på underdelen. Ställ in så glipan mot varandra och bänkskivan är jämn, ca 2 mm.", "Såga till och passa in täcklisterna runtom nederdelen, börja med sockeln. Mest tidskrävande momentet. Prova flera gånger. Mot väggar: använd målarfog. Lägg fogen på sidan av listen vid montering. För lite fog efteråt spricker. Få jämn glipa mot dörrarna.", "Samma sak med överdelen. Avsluta med taklisten. Vertikala lister kapas i överkant om månliknande hål ska linjera. (Tips: dykertpistol för taklister utan halvmånar — skruvar i kanten kan få MDFen att spricka.)"];
   const OVERALL_STEPS = ["Eldragning: byt vägguttag till kopplingsdosa, dra kabel till uttagspositioner.", "Kapa befintlig golvsockel där bokhyllan ska stå.", "Montera underdel, lod- och vågjustera med kilar.", "Bänkskiva: läggning, spackling av skarv, slipning.", "Montera överdel.", "Inpassning och kapning av passbitar samt inramning mot tak och höger sida.", "Hålsågning för infällda uttag.", "Sockel, foder och luckor/lådfronter.", "Spackling av skruvhål och skarvar i hela möbeln.", "Lätt slipning, dammning, maskering.", "Färdigmålning — minst 2–3 strykningar, luckor målas separat liggande."];
 
@@ -449,6 +499,33 @@
     });
   }
 
+  function renderToolItems() {
+    Object.keys(TOOLS_DATA).forEach(category => {
+      const containerId = 'tools-' + category + '-items';
+      const c = document.getElementById(containerId);
+      if (!c) return;
+      c.innerHTML = '';
+      TOOLS_DATA[category].forEach((text, idx) => {
+        const id = 'tool-' + category + '-' + idx;
+        const div = document.createElement('div');
+        div.className = 'step';
+        const checked = !!state.checkboxes[id];
+        const noteText = state.notes[id] || '';
+        if (checked) div.classList.add('done');
+        div.innerHTML =
+          '<input type="checkbox" data-step-id="' + id + '"' + (checked ? ' checked' : '') + '>' +
+          '<div class="step-body">' +
+            '<div class="step-text">' + escapeHtml(text) + '</div>' +
+            '<div class="step-actions">' +
+              '<button data-toggle-note="' + id + '">' + (noteText ? 'Anteckning' : '+ Anteckning') + '</button>' +
+            '</div>' +
+            '<textarea class="step-note' + (noteText ? ' shown' : '') + '" data-note-id="' + id + '" placeholder="T.ex. har hemma, behöver köpa, låna av...">' + escapeHtml(noteText) + '</textarea>' +
+          '</div>';
+        c.appendChild(div);
+      });
+    });
+  }
+
   function refreshProgress() {
     const total = ANTON_STEPS.length + OVERALL_STEPS.length;
     let done = 0;
@@ -468,6 +545,7 @@
 
   renderSteps('anton-steps', ANTON_STEPS, 'anton');
   renderSteps('overall-steps', OVERALL_STEPS, 'overall');
+  renderToolItems();
   refreshProgress();
   refreshLastUpdated(state);
 
@@ -528,6 +606,7 @@
         localStorage.removeItem(STORAGE_KEY);
         renderSteps('anton-steps', ANTON_STEPS, 'anton');
         renderSteps('overall-steps', OVERALL_STEPS, 'overall');
+        renderToolItems();
         refreshProgress();
         refreshLastUpdated(state);
         renderDecisions();
