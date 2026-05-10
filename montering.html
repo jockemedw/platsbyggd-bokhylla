@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Monteringsinstruktion — Platsbyggd bokhylla</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: #f6f5f1;
+    color: #1d2024;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 80px; }
+  header { margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid #dcd6c8; }
+  header h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: -0.01em; }
+  header .sub { font-size: 13px; color: #5b5d5c; }
+  a.back { font-size: 13px; color: #4f7560; text-decoration: none; border-bottom: 1px dashed #4f7560; }
+  a.back:hover { color: #2c5734; }
+
+  .step-nav {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 24px; padding: 16px;
+    background: #fff; border: 1px solid #e3ddcc;
+    border-radius: 10px;
+  }
+  .step-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px; border-radius: 6px;
+    background: #f1ede0; color: #3a4a5a;
+    text-decoration: none; font-size: 13px; font-weight: 500;
+    transition: background 0.15s;
+  }
+  .step-nav a:hover { background: #e3ddcc; }
+  .step-nav .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #4f7560; color: #fff;
+    font-size: 11px; font-weight: 700;
+  }
+
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    margin-bottom: 20px; padding: 12px 16px;
+    background: #fff; border: 1px solid #e3ddcc;
+    border-radius: 10px; font-size: 13px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+
+  .step-card {
+    background: #fff;
+    border: 1px solid #e3ddcc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .step-card h2 {
+    margin: 0 0 4px; font-size: 17px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .step-card h2 .sn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #4f7560; color: #fff;
+    font-size: 14px; font-weight: 700; flex-shrink: 0;
+  }
+  .step-card .desc {
+    margin: 6px 0 14px; font-size: 14px; color: #5b5d5c;
+    padding-left: 38px;
+  }
+  .step-card .desc ul { margin: 4px 0 0; padding-left: 18px; }
+  .step-card .desc li { margin: 3px 0; }
+  .svg-wrap { overflow-x: auto; }
+
+  .tip-box {
+    background: #f1ede0; border: 1px solid #d9d2bc;
+    border-radius: 10px; padding: 14px 16px; margin-top: 8px;
+  }
+  .tip-box h3 { margin: 0 0 6px; font-size: 14px; color: #5b5d5c; text-transform: uppercase; letter-spacing: 0.05em; }
+  .tip-box ul { margin: 4px 0 0; padding-left: 18px; font-size: 14px; }
+  .tip-box li { margin: 4px 0; }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 14px 12px 60px; }
+    header h1 { font-size: 19px; }
+    .step-card .desc { padding-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Shared SVG defs -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ao" viewBox="0 0 10 7" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#e67e22"/>
+    </marker>
+    <marker id="ar" viewBox="0 0 10 7" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#e74c3c"/>
+    </marker>
+    <marker id="ab" viewBox="0 0 10 7" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#3498db"/>
+    </marker>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <header>
+    <a class="back" href="index.html">&larr; Tillbaka till monteringspanel</a>
+    <h1>Monteringsinstruktion — steg för steg</h1>
+    <div class="sub">Ledberg Finsnickeri (Anton) · Platsbyggd bokhylla · Videhagsvägen 23</div>
+  </header>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#fce9b0;border:2px solid #c99a2e;"></div> Aktivt moment (detta steg)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#d5dbe0;border:2px solid #8a9baa;"></div> Redan monterat</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e74c3c;"></div> Skruvpunkt / fixering</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e67e22;"></div> Rörelse / riktning</div>
+  </div>
+
+  <nav class="step-nav">
+    <a href="#steg1"><span class="num">1</span> Stommar</a>
+    <a href="#steg2"><span class="num">2</span> Bänkskivor</a>
+    <a href="#steg3"><span class="num">3</span> Bokhylla</a>
+    <a href="#steg4"><span class="num">4</span> Tillfällig flytt</a>
+    <a href="#steg5"><span class="num">5</span> Skruva fast</a>
+    <a href="#steg6"><span class="num">6</span> Höger täckskiva</a>
+    <a href="#steg7"><span class="num">7</span> Takbitar</a>
+    <a href="#steg8"><span class="num">8</span> Lådor &amp; dörrar</a>
+    <a href="#steg9"><span class="num">9</span> Lister nederdel</a>
+    <a href="#steg10"><span class="num">10</span> Lister överdel</a>
+  </nav>
+
+  <!-- ================ STEG 1 ================ -->
+  <div class="step-card" id="steg1">
+    <h2><span class="sn">1</span> Ställ ut och justera nedre stommar</h2>
+    <div class="desc">
+      <ul>
+        <li>Ställ stommarna mot väggen. Skruva fast melaminlister på vänster och höger stomme där de möter väggen.</li>
+        <li>Justera fötterna med vattenpass — börja från vänster och arbeta åt höger.</li>
+        <li>Tvinga ihop stommarna allt eftersom de justeras.</li>
+        <li>Märk ut reglar i gipsväggen i överkant av stommarna (för senare infästning).</li>
+      </ul>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:860px;">
+        <rect x="0" y="0" width="860" height="520" fill="#f6f5f1" rx="4"/>
+        <!-- Vägg -->
+        <rect x="30" y="20" width="800" height="460" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="8,4" rx="2"/>
+        <text x="430" y="14" text-anchor="middle" font-size="11" fill="#bbb">VÄGG</text>
+        <!-- Golv -->
+        <line x1="30" y1="480" x2="830" y2="480" stroke="#bbb" stroke-width="1.5"/>
+
+        <!-- Stomme 1 (guld) -->
+        <rect x="42" y="375" width="184" height="100" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <text x="134" y="432" text-anchor="middle" font-size="11" fill="#8a6d1a" font-weight="600">Stomme 1</text>
+        <text x="134" y="446" text-anchor="middle" font-size="9" fill="#a68b3a">(lådsektion V)</text>
+
+        <!-- Stomme 2 (guld) -->
+        <rect x="230" y="375" width="190" height="100" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <text x="325" y="432" text-anchor="middle" font-size="11" fill="#8a6d1a" font-weight="600">Stomme 2</text>
+        <text x="325" y="446" text-anchor="middle" font-size="9" fill="#a68b3a">(mittenskåp V)</text>
+
+        <!-- Stomme 3 (guld) -->
+        <rect x="424" y="375" width="190" height="100" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <text x="519" y="432" text-anchor="middle" font-size="11" fill="#8a6d1a" font-weight="600">Stomme 3</text>
+        <text x="519" y="446" text-anchor="middle" font-size="9" fill="#a68b3a">(mittenskåp H)</text>
+
+        <!-- Stomme 4 (guld) -->
+        <rect x="618" y="375" width="198" height="100" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <text x="717" y="432" text-anchor="middle" font-size="11" fill="#8a6d1a" font-weight="600">Stomme 4</text>
+        <text x="717" y="446" text-anchor="middle" font-size="9" fill="#a68b3a">(lådsektion H)</text>
+
+        <!-- Melaminlister (markerade) -->
+        <rect x="42" y="375" width="6" height="100" fill="#e8c550" stroke="#c99a2e" stroke-width="1.5" rx="1"/>
+        <rect x="810" y="375" width="6" height="100" fill="#e8c550" stroke="#c99a2e" stroke-width="1.5" rx="1"/>
+
+        <!-- Fötter -->
+        <rect x="55" y="475" width="14" height="5" fill="#999" rx="1"/>
+        <rect x="200" y="475" width="14" height="5" fill="#999" rx="1"/>
+        <rect x="245" y="475" width="14" height="5" fill="#999" rx="1"/>
+        <rect x="394" y="475" width="14" height="5" fill="#999" rx="1"/>
+        <rect x="440" y="475" width="14" height="5" fill="#999" rx="1"/>
+        <rect x="588" y="475" width="14" height="5" fill="#999" rx="1"/>
+        <rect x="632" y="475" width="14" height="5" fill="#999" rx="1"/>
+        <rect x="790" y="475" width="14" height="5" fill="#999" rx="1"/>
+
+        <!-- Annotationer -->
+        <line x1="22" y1="380" x2="22" y2="470" stroke="#c99a2e" stroke-width="1.5"/>
+        <text x="18" y="430" text-anchor="middle" font-size="8" fill="#c99a2e" font-weight="600" transform="rotate(-90,18,430)">Melaminlist</text>
+
+        <line x1="838" y1="380" x2="838" y2="470" stroke="#c99a2e" stroke-width="1.5"/>
+        <text x="848" y="430" text-anchor="middle" font-size="8" fill="#c99a2e" font-weight="600" transform="rotate(90,848,430)">Melaminlist</text>
+
+        <!-- Riktningspil: börja vänster -->
+        <line x1="80" y1="500" x2="780" y2="500" stroke="#e67e22" stroke-width="2" marker-end="url(#ao)"/>
+        <text x="430" y="515" text-anchor="middle" font-size="10" fill="#e67e22" font-weight="600">Justera fötter — börja från vänster, arbeta åt höger</text>
+
+        <!-- Reglar-markering -->
+        <line x1="150" y1="370" x2="150" y2="362" stroke="#e74c3c" stroke-width="2"/>
+        <line x1="360" y1="370" x2="360" y2="362" stroke="#e74c3c" stroke-width="2"/>
+        <line x1="570" y1="370" x2="570" y2="362" stroke="#e74c3c" stroke-width="2"/>
+        <line x1="750" y1="370" x2="750" y2="362" stroke="#e74c3c" stroke-width="2"/>
+        <text x="430" y="356" text-anchor="middle" font-size="9" fill="#e74c3c">Märk ut reglar i överkant (för infästning i steg 5)</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================ STEG 2 ================ -->
+  <div class="step-card" id="steg2">
+    <h2><span class="sn">2</span> Montera bänkskivor</h2>
+    <div class="desc">
+      <ul>
+        <li>Utgå från mitten och kapa bänkskivorna till rätt längd mot väggen.</li>
+        <li>Grovkapa lite för lång — finjustera sedan med en andra sågning.</li>
+        <li>Klyv mot bakvägg vid behov beroende på avstånd från vägg.</li>
+        <li>Lagom överhäng framtill: 15–20 mm (dörrar bygger ~20 mm).</li>
+      </ul>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:860px;">
+        <rect x="0" y="0" width="860" height="520" fill="#f6f5f1" rx="4"/>
+        <rect x="30" y="20" width="800" height="460" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="8,4" rx="2"/>
+        <line x1="30" y1="480" x2="830" y2="480" stroke="#bbb" stroke-width="1.5"/>
+
+        <!-- Stommar (installerade — grå) -->
+        <rect x="42" y="375" width="184" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="230" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="424" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="618" y="375" width="198" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+
+        <!-- Bänkskiva vänster (guld) -->
+        <rect x="30" y="362" width="400" height="11" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="1"/>
+        <!-- Bänkskiva höger (guld) -->
+        <rect x="434" y="362" width="396" height="11" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="1"/>
+
+        <!-- Skarv i mitten -->
+        <line x1="432" y1="359" x2="432" y2="376" stroke="#c99a2e" stroke-width="2" stroke-dasharray="3,2"/>
+        <text x="432" y="353" text-anchor="middle" font-size="9" fill="#c99a2e" font-weight="600">SKARV</text>
+
+        <!-- Mittpil -->
+        <line x1="432" y1="340" x2="300" y2="340" stroke="#e67e22" stroke-width="1.5" marker-end="url(#ao)"/>
+        <line x1="432" y1="340" x2="564" y2="340" stroke="#e67e22" stroke-width="1.5" marker-end="url(#ao)"/>
+        <text x="432" y="334" text-anchor="middle" font-size="10" fill="#e67e22" font-weight="600">Utgå från mitten</text>
+
+        <!-- Överhäng framtill — vänster bänkskiva -->
+        <line x1="30" y1="395" x2="30" y2="375" stroke="#3498db" stroke-width="1"/>
+        <line x1="24" y1="375" x2="24" y2="362" stroke="#3498db" stroke-width="1"/>
+        <line x1="20" y1="375" x2="28" y2="375" stroke="#3498db" stroke-width="1"/>
+        <line x1="20" y1="362" x2="28" y2="362" stroke="#3498db" stroke-width="1"/>
+        <text x="8" y="370" text-anchor="middle" font-size="8" fill="#3498db" font-weight="600" transform="rotate(-90,8,370)">15-20mm</text>
+
+        <!-- Kapningsmarkeringar -->
+        <line x1="33" y1="358" x2="33" y2="376" stroke="#e74c3c" stroke-width="1.5"/>
+        <line x1="827" y1="358" x2="827" y2="376" stroke="#e74c3c" stroke-width="1.5"/>
+        <text x="80" y="395" font-size="8" fill="#e74c3c">&#9986; Kapa mot vägg</text>
+        <text x="740" y="395" font-size="8" fill="#e74c3c">&#9986; Kapa mot vägg</text>
+
+        <text x="430" y="510" text-anchor="middle" font-size="10" fill="#999">MDF-skivor — skarvas i mitten, kapas mot väggar</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================ STEG 3 ================ -->
+  <div class="step-card" id="steg3">
+    <h2><span class="sn">3</span> Placera bokhylledel</h2>
+    <div class="desc">
+      <ul>
+        <li>Ställ bokhyllan på bänkskivan med rätt mått från vänster vägg.</li>
+        <li>Bokhyllan placeras <strong>19 mm närmare</strong> vänster vägg än nedre vänstra stommen (täcklisten ligger framför, inte ovanpå).</li>
+        <li>Framkant i linje med underdelen.</li>
+        <li>Fixera bokhyllan i bänkskivan via de vinklade hålen på höger sida.</li>
+        <li>Skruva ihop de två vänstra stommarna med varandra och i bänkskivan underifrån.</li>
+      </ul>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:860px;">
+        <rect x="0" y="0" width="860" height="520" fill="#f6f5f1" rx="4"/>
+        <rect x="30" y="20" width="800" height="460" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="8,4" rx="2"/>
+        <line x1="30" y1="480" x2="830" y2="480" stroke="#bbb" stroke-width="1.5"/>
+
+        <!-- Installerad underdel (grå) -->
+        <rect x="42" y="375" width="184" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="230" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="424" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="618" y="375" width="198" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="30" y="362" width="800" height="11" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1"/>
+
+        <!-- Bokhylledel (guld) -->
+        <rect x="40" y="42" width="190" height="318" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="3"/>
+        <text x="135" y="190" text-anchor="middle" font-size="13" fill="#8a6d1a" font-weight="600">BOKHYLLA</text>
+        <text x="135" y="207" text-anchor="middle" font-size="10" fill="#a68b3a">(~1070 mm)</text>
+
+        <!-- Hyllplan (antydan) -->
+        <line x1="45" y1="100" x2="225" y2="100" stroke="#d4a020" stroke-width="1.5" opacity="0.5"/>
+        <line x1="45" y1="155" x2="225" y2="155" stroke="#d4a020" stroke-width="1.5" opacity="0.5"/>
+        <line x1="45" y1="210" x2="225" y2="210" stroke="#d4a020" stroke-width="1.5" opacity="0.5"/>
+        <line x1="45" y1="265" x2="225" y2="265" stroke="#d4a020" stroke-width="1.5" opacity="0.5"/>
+        <line x1="45" y1="315" x2="225" y2="315" stroke="#d4a020" stroke-width="1.5" opacity="0.5"/>
+
+        <!-- 19mm offset-dimension -->
+        <line x1="30" y1="30" x2="30" y2="38" stroke="#3498db" stroke-width="1"/>
+        <line x1="40" y1="30" x2="40" y2="38" stroke="#3498db" stroke-width="1"/>
+        <line x1="30" y1="34" x2="40" y2="34" stroke="#3498db" stroke-width="1"/>
+        <text x="35" y="27" text-anchor="middle" font-size="8" fill="#3498db" font-weight="600">19mm</text>
+
+        <!-- Vinklade hål höger sida -->
+        <circle cx="230" cy="100" r="5" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+        <circle cx="230" cy="300" r="5" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+        <text x="240" y="92" font-size="9" fill="#e74c3c" font-weight="600">Vinklade hål (höger)</text>
+        <text x="240" y="104" font-size="8" fill="#999">Fixera bokhylla i bänkskiva</text>
+
+        <!-- Skruva ihop vänstra stommar underifrån -->
+        <circle cx="134" cy="375" r="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+        <circle cx="170" cy="375" r="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+        <text x="134" y="395" text-anchor="middle" font-size="8" fill="#e74c3c">Skruva underifrån</text>
+
+        <!-- Framkant-linje -->
+        <line x1="40" y1="365" x2="40" y2="478" stroke="#e67e22" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="50" y="350" font-size="8" fill="#e67e22" font-weight="600">Framkant i linje &#x2193;</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================ STEG 4 ================ -->
+  <div class="step-card" id="steg4">
+    <h2><span class="sn">4</span> Tillfällig demontering — nå vänstra vinklade hål</h2>
+    <div class="desc">
+      <ul>
+        <li>Ta bort höger bänkskiva och de två högra stommarna tillfälligt.</li>
+        <li>Dra den hopskruvade vänstra enheten (stommar + bänkskiva + bokhylla) ca 20 cm åt höger.</li>
+        <li>Skruva ihop bokhyllan med bänkskivan via de vänstra vinklade hålen.</li>
+      </ul>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:860px;">
+        <rect x="0" y="0" width="860" height="520" fill="#f6f5f1" rx="4"/>
+        <rect x="30" y="20" width="800" height="460" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="8,4" rx="2"/>
+        <line x1="30" y1="480" x2="830" y2="480" stroke="#bbb" stroke-width="1.5"/>
+
+        <!-- Borttagen: höger bänkskiva + stommar (streckade) -->
+        <rect x="424" y="375" width="190" height="100" fill="none" stroke="#bbb" stroke-width="1.5" stroke-dasharray="6,4" rx="2"/>
+        <rect x="618" y="375" width="198" height="100" fill="none" stroke="#bbb" stroke-width="1.5" stroke-dasharray="6,4" rx="2"/>
+        <rect x="434" y="362" width="396" height="11" fill="none" stroke="#bbb" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="520" y="432" text-anchor="middle" font-size="11" fill="#bbb" font-weight="500">Borttagen tillfälligt</text>
+        <text x="715" y="432" text-anchor="middle" font-size="11" fill="#bbb" font-weight="500">Borttagen tillfälligt</text>
+
+        <!-- Vänster enhet (guld — flyttad 20cm åt höger, ~37 SVG-enheter) -->
+        <g transform="translate(37,0)">
+          <rect x="42" y="375" width="184" height="100" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+          <rect x="230" y="375" width="190" height="100" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+          <rect x="30" y="362" width="400" height="11" fill="#fce9b0" stroke="#c99a2e" stroke-width="2"/>
+          <rect x="40" y="42" width="190" height="318" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="3"/>
+          <text x="135" y="195" text-anchor="middle" font-size="12" fill="#8a6d1a" font-weight="600">BOKHYLLA</text>
+        </g>
+
+        <!-- Rörelspil -->
+        <line x1="100" y1="500" x2="160" y2="500" stroke="#e67e22" stroke-width="3" marker-end="url(#ao)"/>
+        <text x="200" y="504" font-size="10" fill="#e67e22" font-weight="600">~20 cm åt höger</text>
+
+        <!-- Vinklade hål vänster sida (nu åtkomliga) -->
+        <circle cx="77" cy="100" r="6" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+        <circle cx="77" cy="300" r="6" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+        <text x="90" y="80" font-size="10" fill="#e74c3c" font-weight="600">Vinklade hål (vänster)</text>
+        <text x="90" y="93" font-size="9" fill="#999">Nu åtkomliga — skruva fast!</text>
+
+        <!-- Tidigare position (spöke) -->
+        <rect x="30" y="42" width="10" height="318" fill="none" stroke="#ddd" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="25" y="200" text-anchor="end" font-size="7" fill="#ccc" transform="rotate(-90,25,200)">Tidigare position</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================ STEG 5 ================ -->
+  <div class="step-card" id="steg5">
+    <h2><span class="sn">5</span> Återmontera och skruva fast allt</h2>
+    <div class="desc">
+      <ul>
+        <li>Flytta tillbaka vänstra stommarna till rätt position.</li>
+        <li>Montera tillbaka höger stommar och bänkskiva.</li>
+        <li>Skruva ihop alla stommar med varandra, i bänkskiva och i bakre väggen.</li>
+        <li><strong>Skruva högt upp</strong> i stommarna — bänkskivan motverkar att stommarna dras in nedtill.</li>
+        <li>Skruva fast bokhyllan i bakkant och vänster vägg.</li>
+      </ul>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:860px;">
+        <rect x="0" y="0" width="860" height="520" fill="#f6f5f1" rx="4"/>
+        <rect x="30" y="20" width="800" height="460" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="8,4" rx="2"/>
+        <line x1="30" y1="480" x2="830" y2="480" stroke="#bbb" stroke-width="1.5"/>
+        <text x="430" y="14" text-anchor="middle" font-size="11" fill="#bbb">BAKVÄGG</text>
+
+        <!-- Alla stommar monterade (grå) -->
+        <rect x="42" y="375" width="184" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="230" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="424" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="618" y="375" width="198" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="2"/>
+        <rect x="30" y="362" width="800" height="11" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1"/>
+
+        <!-- Bokhylla (grå) -->
+        <rect x="40" y="42" width="190" height="318" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1.5" rx="3"/>
+        <text x="135" y="195" text-anchor="middle" font-size="12" fill="#5b5d5c" font-weight="600">BOKHYLLA</text>
+
+        <!-- SKRUVPUNKTER — stommar i bakvägg (högt upp!) -->
+        <circle cx="134" cy="382" r="5" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+        <circle cx="325" cy="382" r="5" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+        <circle cx="519" cy="382" r="5" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+        <circle cx="717" cy="382" r="5" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+
+        <!-- Pilar mot bakvägg -->
+        <line x1="134" y1="382" x2="134" y2="374" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#ar)"/>
+        <line x1="325" y1="382" x2="325" y2="374" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#ar)"/>
+        <line x1="519" y1="382" x2="519" y2="374" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#ar)"/>
+        <line x1="717" y1="382" x2="717" y2="374" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#ar)"/>
+
+        <text x="430" y="400" text-anchor="middle" font-size="10" fill="#e74c3c" font-weight="600">Skruva HÖGT i stommar &#x2192; bakvägg</text>
+        <text x="430" y="413" text-anchor="middle" font-size="9" fill="#999">(bänkskivan motverkar att stommarna dras in nertill)</text>
+
+        <!-- Skruva stommar i varandra -->
+        <circle cx="228" cy="430" r="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+        <circle cx="422" cy="430" r="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+        <circle cx="616" cy="430" r="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+        <text x="430" y="455" text-anchor="middle" font-size="9" fill="#e74c3c">Stommar i varandra</text>
+
+        <!-- Bokhylla i bakvägg och vänster vägg -->
+        <circle cx="135" cy="50" r="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+        <circle cx="135" cy="330" r="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+        <line x1="135" y1="50" x2="135" y2="28" stroke="#e74c3c" stroke-width="1" marker-end="url(#ar)"/>
+        <line x1="135" y1="330" x2="135" y2="355" stroke="#e74c3c" stroke-width="1" marker-end="url(#ar)"/>
+        <text x="155" y="50" font-size="9" fill="#e74c3c" font-weight="600">Bokhylla &#x2192; bakvägg</text>
+
+        <circle cx="42" cy="190" r="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+        <line x1="42" y1="190" x2="33" y2="190" stroke="#e74c3c" stroke-width="1" marker-end="url(#ar)"/>
+        <text x="48" y="183" font-size="9" fill="#e74c3c" font-weight="600">&#x2192; vänster vägg</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================ STEG 6 ================ -->
+  <div class="step-card" id="steg6">
+    <h2><span class="sn">6</span> Montera höger täckskiva</h2>
+    <div class="desc">
+      <ul>
+        <li>Fäst med de orangea ställskruvarna i höger vägg. Korta vid behov med bågfil.</li>
+        <li>Samma avstånd framåt som bokhyllan — passbitens framkant ska gå i linje.</li>
+        <li>Passa med den högra passbiten på underdelen.</li>
+        <li>Behöver inte nå dikt mot tak — 10 mm kortare är lagom (döljs av taklist).</li>
+      </ul>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:860px;">
+        <rect x="0" y="0" width="860" height="520" fill="#f6f5f1" rx="4"/>
+        <rect x="30" y="20" width="800" height="460" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="8,4" rx="2"/>
+        <line x1="30" y1="480" x2="830" y2="480" stroke="#bbb" stroke-width="1.5"/>
+
+        <!-- Installerad struktur (grå) -->
+        <rect x="42" y="375" width="184" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="230" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="424" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="618" y="375" width="198" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="30" y="362" width="800" height="11" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1"/>
+        <rect x="40" y="42" width="190" height="318" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="3"/>
+        <text x="135" y="195" text-anchor="middle" font-size="11" fill="#8a9baa">BOKHYLLA</text>
+
+        <!-- Höger täckskiva (guld) -->
+        <rect x="820" y="32" width="12" height="436" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <text x="814" y="250" text-anchor="middle" font-size="9" fill="#8a6d1a" font-weight="600" transform="rotate(90,814,250)">HÖGER TÄCKSKIVA</text>
+
+        <!-- Ställskruvar (orange prickar) -->
+        <circle cx="833" cy="80" r="4" fill="#e67e22" stroke="#d35400" stroke-width="1.5"/>
+        <circle cx="833" cy="200" r="4" fill="#e67e22" stroke="#d35400" stroke-width="1.5"/>
+        <circle cx="833" cy="320" r="4" fill="#e67e22" stroke="#d35400" stroke-width="1.5"/>
+        <circle cx="833" cy="420" r="4" fill="#e67e22" stroke="#d35400" stroke-width="1.5"/>
+        <text x="845" y="205" font-size="9" fill="#e67e22" font-weight="600" transform="rotate(90,845,205)">Ställskruvar (orange)</text>
+
+        <!-- 10mm gap mot tak -->
+        <line x1="816" y1="20" x2="836" y2="20" stroke="#3498db" stroke-width="1"/>
+        <line x1="816" y1="32" x2="836" y2="32" stroke="#3498db" stroke-width="1"/>
+        <line x1="826" y1="20" x2="826" y2="32" stroke="#3498db" stroke-width="1"/>
+        <text x="800" y="30" text-anchor="end" font-size="8" fill="#3498db" font-weight="600">~10 mm</text>
+        <text x="800" y="40" text-anchor="end" font-size="7" fill="#999">(döljs av taklist)</text>
+
+        <!-- Passbit underdel (grå, redan monterad) -->
+        <rect x="820" y="370" width="10" height="110" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="1"/>
+
+        <!-- Alignment med bokhyllan -->
+        <line x1="230" y1="42" x2="230" y2="475" stroke="#e67e22" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+        <line x1="820" y1="32" x2="820" y2="475" stroke="#e67e22" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+        <text x="525" y="490" text-anchor="middle" font-size="9" fill="#e67e22">Framkant i linje med bokhyllan</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================ STEG 7 ================ -->
+  <div class="step-card" id="steg7">
+    <h2><span class="sn">7</span> Montera takbitar</h2>
+    <div class="desc">
+      <ul>
+        <li>Utgå från mitten — dra lodlinje upp från mitten av bänkskivorna med vattenpass.</li>
+        <li>Kapa till längd och bredd så de passar mot bokhylledelen och höger täckskiva.</li>
+        <li>Höjd = underkant av bokhyllans högsta hyllplan.</li>
+        <li>Förstärk skarven i mitten med plywoodbiten.</li>
+      </ul>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:860px;">
+        <rect x="0" y="0" width="860" height="520" fill="#f6f5f1" rx="4"/>
+        <rect x="30" y="20" width="800" height="460" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="8,4" rx="2"/>
+        <line x1="30" y1="480" x2="830" y2="480" stroke="#bbb" stroke-width="1.5"/>
+
+        <!-- Installerad struktur (grå) -->
+        <rect x="42" y="375" width="184" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="230" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="424" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="618" y="375" width="198" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="30" y="362" width="800" height="11" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1"/>
+        <rect x="40" y="42" width="190" height="318" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="3"/>
+        <rect x="820" y="32" width="12" height="436" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <text x="135" y="195" text-anchor="middle" font-size="11" fill="#8a9baa">BOKHYLLA</text>
+
+        <!-- Takbit vänster (guld) -->
+        <rect x="232" y="22" width="300" height="14" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <!-- Takbit höger (guld) -->
+        <rect x="536" y="22" width="282" height="14" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+
+        <!-- Skarv + plywood-förstärkning -->
+        <line x1="534" y1="18" x2="534" y2="40" stroke="#c99a2e" stroke-width="2" stroke-dasharray="3,2"/>
+        <rect x="524" y="36" width="20" height="6" fill="#c8a872" stroke="#a67c52" stroke-width="1" rx="1"/>
+        <text x="534" y="52" text-anchor="middle" font-size="8" fill="#a67c52" font-weight="600">Plywood-förstärkning</text>
+
+        <!-- Mittpil -->
+        <line x1="430" y1="362" x2="430" y2="42" stroke="#e67e22" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#ao)"/>
+        <text x="445" y="300" font-size="9" fill="#e67e22" font-weight="600" transform="rotate(-90,445,300)">Lodlinje från mitten</text>
+
+        <!-- Höjdreferens — bokhyllans övre hyllplan -->
+        <line x1="40" y1="87" x2="230" y2="87" stroke="#d5dbe0" stroke-width="3"/>
+        <line x1="232" y1="36" x2="300" y2="36" stroke="#3498db" stroke-width="1" stroke-dasharray="3,2"/>
+        <line x1="232" y1="87" x2="300" y2="87" stroke="#3498db" stroke-width="1" stroke-dasharray="3,2"/>
+        <line x1="300" y1="36" x2="300" y2="87" stroke="#3498db" stroke-width="1"/>
+        <text x="310" y="65" font-size="8" fill="#3498db" font-weight="600">Underkant HP 1</text>
+        <text x="310" y="76" font-size="7" fill="#999">= höjd på takbitar</text>
+
+        <text x="430" y="14" text-anchor="middle" font-size="10" fill="#c99a2e" font-weight="600">TAKBITAR — utgå från mitten</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================ STEG 8 ================ -->
+  <div class="step-card" id="steg8">
+    <h2><span class="sn">8</span> Montera lådor och dörrar</h2>
+    <div class="desc">
+      <ul>
+        <li>Häng på dörrar och sätt i lådor på underdelen.</li>
+        <li>Ställ in så att glipan mot varandra och bänkskivan är jämn — ca 2 mm.</li>
+        <li>Tänk på att dörrarna bygger ca 20 mm framför stommen.</li>
+      </ul>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:860px;">
+        <rect x="0" y="0" width="860" height="520" fill="#f6f5f1" rx="4"/>
+        <rect x="30" y="20" width="800" height="460" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="8,4" rx="2"/>
+        <line x1="30" y1="480" x2="830" y2="480" stroke="#bbb" stroke-width="1.5"/>
+
+        <!-- Installerad struktur (grå) -->
+        <rect x="42" y="375" width="184" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="230" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="424" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="618" y="375" width="198" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="30" y="362" width="800" height="11" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1"/>
+        <rect x="40" y="42" width="190" height="318" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="3"/>
+        <rect x="820" y="32" width="12" height="436" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="232" y="22" width="586" height="14" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+
+        <!-- Lådor vänster (guld) -->
+        <rect x="48" y="380" width="170" height="28" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <line x1="132" y1="388" x2="140" y2="388" stroke="#8a6d1a" stroke-width="1.5"/>
+        <rect x="48" y="412" width="170" height="28" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <line x1="132" y1="420" x2="140" y2="420" stroke="#8a6d1a" stroke-width="1.5"/>
+        <rect x="48" y="444" width="170" height="28" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <line x1="132" y1="452" x2="140" y2="452" stroke="#8a6d1a" stroke-width="1.5"/>
+
+        <!-- Dörrar mittenskåp V (guld) -->
+        <rect x="236" y="380" width="88" height="90" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <circle cx="318" cy="425" r="3" fill="#8a6d1a"/>
+        <rect x="328" y="380" width="86" height="90" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <circle cx="334" cy="425" r="3" fill="#8a6d1a"/>
+
+        <!-- Dörrar mittenskåp H (guld) -->
+        <rect x="430" y="380" width="88" height="90" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <circle cx="512" cy="425" r="3" fill="#8a6d1a"/>
+        <rect x="522" y="380" width="86" height="90" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <circle cx="528" cy="425" r="3" fill="#8a6d1a"/>
+
+        <!-- Lådor höger (guld) -->
+        <rect x="624" y="380" width="186" height="28" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <line x1="716" y1="388" x2="724" y2="388" stroke="#8a6d1a" stroke-width="1.5"/>
+        <rect x="624" y="412" width="186" height="28" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <line x1="716" y1="420" x2="724" y2="420" stroke="#8a6d1a" stroke-width="1.5"/>
+        <rect x="624" y="444" width="186" height="28" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="2"/>
+        <line x1="716" y1="452" x2="724" y2="452" stroke="#8a6d1a" stroke-width="1.5"/>
+
+        <!-- 2mm gap-annotationer -->
+        <line x1="48" y1="373" x2="218" y2="373" stroke="#3498db" stroke-width="1"/>
+        <text x="133" y="370" text-anchor="middle" font-size="8" fill="#3498db" font-weight="600">~2 mm glipa mot bänkskiva</text>
+
+        <line x1="324" y1="428" x2="328" y2="428" stroke="#3498db" stroke-width="2"/>
+        <text x="326" y="442" text-anchor="middle" font-size="7" fill="#3498db">2mm</text>
+
+        <line x1="518" y1="428" x2="522" y2="428" stroke="#3498db" stroke-width="2"/>
+        <text x="520" y="442" text-anchor="middle" font-size="7" fill="#3498db">2mm</text>
+
+        <text x="430" y="500" text-anchor="middle" font-size="10" fill="#999">Ställ in jämn glipa (~2 mm) mot varandra och bänkskivan</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================ STEG 9 ================ -->
+  <div class="step-card" id="steg9">
+    <h2><span class="sn">9</span> Täcklister runt nederdelen</h2>
+    <div class="desc">
+      <ul>
+        <li>Såga till och passa in täcklisterna. <strong>Börja med sockeln.</strong></li>
+        <li>Prova gärna flera gånger — detta moment är mest tidskrävande.</li>
+        <li>Mot väggarna: använd målarfog. Lägg fog på sidan av listen och montera den.</li>
+        <li>Se till att springan mot dörrarna blir jämn.</li>
+      </ul>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:860px;">
+        <rect x="0" y="0" width="860" height="520" fill="#f6f5f1" rx="4"/>
+        <rect x="30" y="20" width="800" height="460" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="8,4" rx="2"/>
+        <line x1="30" y1="480" x2="830" y2="480" stroke="#bbb" stroke-width="1.5"/>
+
+        <!-- Installerad struktur (grå) -->
+        <rect x="42" y="375" width="184" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="230" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="424" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="618" y="375" width="198" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="30" y="362" width="800" height="11" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1"/>
+        <rect x="40" y="42" width="190" height="318" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="3"/>
+        <rect x="820" y="32" width="12" height="436" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="232" y="22" width="586" height="14" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+
+        <!-- Passbit vänster vägg (grå, installerad) -->
+        <rect x="30" y="370" width="10" height="110" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="1"/>
+        <!-- Passbit höger vägg (grå, installerad) -->
+        <rect x="820" y="370" width="10" height="110" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="1"/>
+
+        <!-- TÄCKLISTER (guld) med numrering -->
+
+        <!-- 1. Sockel (botten) -->
+        <rect x="30" y="476" width="800" height="8" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="1"/>
+        <circle cx="430" cy="496" r="10" fill="#4f7560"/>
+        <text x="430" y="500" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
+        <text x="450" y="500" font-size="9" fill="#4f7560" font-weight="600">Sockel (börja här)</text>
+
+        <!-- 2. Vänster sidolist -->
+        <rect x="30" y="362" width="8" height="114" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="1"/>
+        <circle cx="16" cy="420" r="10" fill="#4f7560"/>
+        <text x="16" y="424" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">2</text>
+
+        <!-- 3. Höger sidolist -->
+        <rect x="822" y="362" width="8" height="114" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="1"/>
+        <circle cx="844" cy="420" r="10" fill="#4f7560"/>
+        <text x="844" y="424" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">3</text>
+
+        <!-- Målarfog-annotationer -->
+        <text x="16" y="360" text-anchor="middle" font-size="7" fill="#999">Målarfog</text>
+        <text x="844" y="360" text-anchor="middle" font-size="7" fill="#999">Målarfog</text>
+
+        <!-- Jämn springa mot dörrar -->
+        <text x="430" y="510" text-anchor="middle" font-size="10" fill="#999">Prova flera gånger — jämn springa mot dörrar</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================ STEG 10 ================ -->
+  <div class="step-card" id="steg10">
+    <h2><span class="sn">10</span> Täcklister överdel — avsluta med taklist</h2>
+    <div class="desc">
+      <ul>
+        <li>Samma förfarande som nederdelen.</li>
+        <li>De vertikala listerna ska kapas i överkant om de månliknande hålen ska linjera.</li>
+        <li>Avsluta med taklisten.</li>
+      </ul>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:860px;">
+        <rect x="0" y="0" width="860" height="520" fill="#f6f5f1" rx="4"/>
+        <rect x="30" y="20" width="800" height="460" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="8,4" rx="2"/>
+        <line x1="30" y1="480" x2="830" y2="480" stroke="#bbb" stroke-width="1.5"/>
+
+        <!-- Installerad struktur (grå) — allt inklusive nedre lister -->
+        <rect x="42" y="375" width="184" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="230" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="424" y="375" width="190" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="618" y="375" width="198" height="100" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="30" y="362" width="800" height="11" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1"/>
+        <rect x="40" y="42" width="190" height="318" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="3"/>
+        <rect x="820" y="32" width="12" height="436" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+        <rect x="232" y="22" width="586" height="14" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1" rx="2"/>
+
+        <!-- Nedre lister (grå, redan monterade) -->
+        <rect x="30" y="476" width="800" height="6" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1"/>
+        <rect x="30" y="362" width="6" height="120" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1"/>
+        <rect x="824" y="362" width="6" height="120" fill="#d5dbe0" stroke="#8a9baa" stroke-width="1"/>
+
+        <!-- ÖVERDEL LISTER (guld) med numrering -->
+
+        <!-- 1. Vänster vertikal list (bokhyllans vänstra sida) -->
+        <rect x="30" y="32" width="8" height="328" fill="#fce9b0" stroke="#c99a2e" stroke-width="2" rx="1"/>
+        <circle cx="16" cy="195" r="10" fill="#4f7560"/>
+        <text x="16" y="199" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
+
+        <!-- 2. Övriga vertikala lister -->
+
+        <!-- 3. Taklist (sist!) -->
+        <rect x="30" y="18" width="800" height="8" fill="#fce9b0" stroke="#c99a2e" stroke-width="2.5" rx="1"/>
+        <circle cx="430" cy="10" r="11" fill="#4f7560"/>
+        <text x="430" y="14" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">SIST</text>
+
+        <!-- Halvmåne-hål illustration -->
+        <path d="M34,80 a4,4 0 0,1 0,8" fill="none" stroke="#c99a2e" stroke-width="1.5"/>
+        <path d="M34,120 a4,4 0 0,1 0,8" fill="none" stroke="#c99a2e" stroke-width="1.5"/>
+        <path d="M34,160 a4,4 0 0,1 0,8" fill="none" stroke="#c99a2e" stroke-width="1.5"/>
+        <text x="50" y="135" font-size="9" fill="#c99a2e" font-weight="600">Halvmånar ska linjera</text>
+        <text x="50" y="148" font-size="8" fill="#999">&#x2192; Kapa vertikala lister i överkant</text>
+
+        <text x="430" y="505" text-anchor="middle" font-size="10" fill="#999">Avsluta med taklisten</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================ TIPS ================ -->
+  <div class="tip-box">
+    <h3>Tips från Anton</h3>
+    <ul>
+      <li><strong>Dykertpistol:</strong> Använd för att montera taklisterna som inte har "halvmånarna". Skruvar i kanten av MDF riskerar att spricka materialet.</li>
+      <li><strong>Grovkapa bänkskivor:</strong> Kapa alltid lite för lång först. Finjustera med en andra sågning.</li>
+      <li><strong>Målarfog:</strong> Lägg på sidan av listen innan montering. För lite fog i efterhand kan spricka.</li>
+      <li><strong>Täcklister:</strong> Det mest tidskrävande momentet. Prova passningen flera gånger innan fastskruvning.</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>
