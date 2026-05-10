@@ -4,7 +4,8 @@
       "PowerShell(gh --version 2>$null)",
       "PowerShell(if \\(-not $?\\) { \"gh: NOT INSTALLED\" })",
       "Bash(npm --version)",
-      "Bash(npx vercel *)"
+      "Bash(npx vercel *)",
+      "Bash(gh repo *)"
     ]
   }
 }
