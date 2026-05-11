@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
@@ -106,7 +106,7 @@
     <h2>Oversikt — kabeldragning och uttagspunkter</h2>
 
     <div class="legend">
-      <div class="legend-item"><div class="legend-dot" style="background:#e74c3c;"></div> Befintlig kopplingsdosa (f.d. uttag)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#e74c3c;"></div> Kopplingsdosa (ersätter befintligt uttag)</div>
       <div class="legend-item"><div class="legend-dot" style="background:#3498db;"></div> Eluttag (Schuko + USB)</div>
       <div class="legend-item"><div class="legend-dot" style="background:#2ecc71;"></div> Framtidssäkring</div>
       <div class="legend-item"><div class="legend-dot" style="background:#e67e22;"></div> Kabeldragning</div>
@@ -329,8 +329,8 @@
         <text x="700" y="470" text-anchor="middle" font-size="8" fill="#27ae60">CAT6 (framtidssäkring)</text>
 
         <!-- K label -->
-        <text x="805" y="476" text-anchor="end" font-size="9" fill="#c0392b" font-weight="600">Kopplingsdosa</text>
-        <text x="805" y="486" text-anchor="end" font-size="8" fill="#999">(41 cm fr höger vägg)</text>
+        <text x="805" y="476" text-anchor="end" font-size="9" fill="#c0392b" font-weight="600">Kopplingsdosa (ersätter uttag)</text>
+        <text x="805" y="486" text-anchor="end" font-size="8" fill="#999">41 cm fr höger vägg — propp ryms ej</text>
 
         <!-- F1 label -->
         <line x1="519" y1="49" x2="535" y2="49" stroke="#2ecc71" stroke-width="1"/>
@@ -357,6 +357,1668 @@
     </svg>
   </div>
 
+  <!-- ============================================ -->
+  <!-- DETALJBILDER — varje kopplingspunkt           -->
+  <!-- ============================================ -->
+
+  <div class="plan-section">
+    <h2>Detaljbilder — kopplingspunkter</h2>
+
+    <!-- K — Kopplingsdosa -->
+    <h3>K — Kopplingsdosa (ersätter befintligt vägguttag)</h3>
+    <div class="mockup-container" style="padding:16px;">
+      <svg viewBox="0 0 780 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:780px;height:auto;">
+        <defs>
+          <!-- Wood grain pattern -->
+          <pattern id="k-wood-grain" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="6" y2="6" stroke="#b89a6a" stroke-width="0.3" opacity="0.35"/>
+            <line x1="0" y1="3" x2="6" y2="9" stroke="#b89a6a" stroke-width="0.2" opacity="0.2"/>
+          </pattern>
+          <!-- Plaster/wall stipple texture -->
+          <pattern id="k-plaster" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="0.4" fill="#a09880" opacity="0.3"/>
+            <circle cx="5" cy="3" r="0.3" fill="#a09880" opacity="0.25"/>
+            <circle cx="3" cy="6" r="0.35" fill="#a09880" opacity="0.2"/>
+            <circle cx="7" cy="7" r="0.3" fill="#a09880" opacity="0.28"/>
+            <circle cx="2" cy="4" r="0.25" fill="#a09880" opacity="0.15"/>
+            <circle cx="6" cy="1" r="0.3" fill="#a09880" opacity="0.2"/>
+          </pattern>
+          <!-- Metal texture -->
+          <pattern id="k-metal" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+            <rect width="4" height="4" fill="#c0c0c0"/>
+            <line x1="0" y1="1" x2="4" y2="1" stroke="#d0d0d0" stroke-width="0.3" opacity="0.5"/>
+            <line x1="0" y1="3" x2="4" y2="3" stroke="#b0b0b0" stroke-width="0.3" opacity="0.4"/>
+          </pattern>
+          <!-- Wall gradient -->
+          <linearGradient id="k-wall-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#c2b8a0"/>
+            <stop offset="40%" stop-color="#d5cfc0"/>
+            <stop offset="100%" stop-color="#ccc4b0"/>
+          </linearGradient>
+          <!-- Apparatdosa depth gradient -->
+          <linearGradient id="k-dosa-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#d8d2c2"/>
+            <stop offset="100%" stop-color="#eae5d8"/>
+          </linearGradient>
+          <!-- Cover plate gradient -->
+          <linearGradient id="k-cover-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#d0d0d0"/>
+            <stop offset="50%" stop-color="#e8e8e8"/>
+            <stop offset="100%" stop-color="#c8c8c8"/>
+          </linearGradient>
+          <!-- Wago body gradient -->
+          <linearGradient id="k-wago-body" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f0f0f0"/>
+            <stop offset="100%" stop-color="#d5d5d5"/>
+          </linearGradient>
+          <!-- Arrow marker for dimension lines -->
+          <marker id="k-arrow-start" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+            <path d="M8,0 L0,3 L8,6" fill="none" stroke="#888" stroke-width="0.8"/>
+          </marker>
+          <marker id="k-arrow-end" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6" fill="none" stroke="#888" stroke-width="0.8"/>
+          </marker>
+          <!-- Green/yellow stripe pattern for PE wire -->
+          <pattern id="k-pe-stripe" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="4" height="4" fill="#27ae60"/>
+            <rect width="2" height="4" fill="#f1c40f"/>
+          </pattern>
+        </defs>
+
+        <!-- Background -->
+        <rect x="0" y="0" width="780" height="420" fill="#f6f5f1" rx="6"/>
+
+        <!-- Title -->
+        <text x="240" y="22" text-anchor="middle" font-size="14" fill="#333" font-weight="700" letter-spacing="0.02em">K — Kopplingsdosa: tvärsnitt vägg &amp; montering</text>
+        <line x1="30" y1="30" x2="460" y2="30" stroke="#dcd6c8" stroke-width="1"/>
+
+        <!-- ============================================ -->
+        <!-- CROSS-SECTION (left ~60%)                    -->
+        <!-- ============================================ -->
+
+        <!-- Wall cross-section with texture -->
+        <rect x="30" y="48" width="120" height="320" fill="url(#k-wall-grad)" stroke="#a09880" stroke-width="1.5" rx="2"/>
+        <rect x="30" y="48" width="120" height="320" fill="url(#k-plaster)" rx="2"/>
+        <!-- Wall label -->
+        <text x="68" y="75" text-anchor="middle" font-size="11" fill="#777" font-weight="600" letter-spacing="0.1em">VÄGG</text>
+        <text x="68" y="88" text-anchor="middle" font-size="8" fill="#999">~120 mm puts + tegel</text>
+
+        <!-- Floor line -->
+        <rect x="20" y="368" width="445" height="8" fill="#b0a890" stroke="#998a70" stroke-width="1" rx="1"/>
+        <text x="22" y="392" font-size="8" fill="#999">Golv</text>
+
+        <!-- Apparatdosa recessed into wall — realistic depth -->
+        <!-- Cavity in wall -->
+        <rect x="105" y="168" width="68" height="130" fill="#c8c0a8" stroke="#a09880" stroke-width="1" rx="2"/>
+        <!-- Dosa box -->
+        <rect x="108" y="172" width="62" height="122" fill="url(#k-dosa-grad)" stroke="#999" stroke-width="1.5" rx="3"/>
+        <!-- Dosa inner shadow -->
+        <rect x="112" y="176" width="54" height="114" fill="none" stroke="#c0b8a0" stroke-width="0.5" rx="2" opacity="0.6"/>
+        <!-- Knockning / utslagshål at bottom -->
+        <ellipse cx="139" cy="290" rx="8" ry="4" fill="#a09880" stroke="#888" stroke-width="0.8"/>
+        <text x="139" y="305" text-anchor="middle" font-size="6" fill="#888">Knockning</text>
+
+        <!-- Incoming 230V feed cable from left wall -->
+        <!-- 3 conductors visible inside wall -->
+        <line x1="30" y1="210" x2="108" y2="210" stroke="#e67e22" stroke-width="5" stroke-linecap="round"/>
+        <!-- Individual conductors showing at entry -->
+        <line x1="80" y1="204" x2="108" y2="204" stroke="#8B4513" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="80" y1="210" x2="108" y2="210" stroke="#3498db" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="80" y1="216" x2="108" y2="216" stroke="url(#k-pe-stripe)" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- Feed label -->
+        <text x="35" y="200" font-size="9" fill="#e67e22" font-weight="600">Matning 230V</text>
+        <text x="35" y="189" font-size="8" fill="#888">fr. elcentral</text>
+
+        <!-- ============================================ -->
+        <!-- WAGO 221 Connectors — realistic rendering    -->
+        <!-- ============================================ -->
+
+        <!-- Wago L (fas) -->
+        <g transform="translate(117, 195)">
+          <!-- Connector body -->
+          <rect x="0" y="0" width="38" height="13" fill="url(#k-wago-body)" stroke="#bbb" stroke-width="1" rx="2"/>
+          <!-- Transparent window showing conductor -->
+          <rect x="4" y="3" width="10" height="7" fill="#f8f0e0" stroke="#ddd" stroke-width="0.5" rx="1"/>
+          <line x1="5" y1="6.5" x2="13" y2="6.5" stroke="#8B4513" stroke-width="1.5"/>
+          <!-- Second conductor entry -->
+          <rect x="24" y="3" width="10" height="7" fill="#f8f0e0" stroke="#ddd" stroke-width="0.5" rx="1"/>
+          <line x1="25" y1="6.5" x2="33" y2="6.5" stroke="#8B4513" stroke-width="1.5"/>
+          <!-- Orange lever -->
+          <rect x="2" y="-5" width="14" height="6" fill="#e67e22" stroke="#d35400" stroke-width="0.8" rx="1.5"/>
+          <rect x="22" y="-5" width="14" height="6" fill="#e67e22" stroke="#d35400" stroke-width="0.8" rx="1.5"/>
+          <!-- Label -->
+          <text x="19" y="10" text-anchor="middle" font-size="7" fill="#555" font-weight="700">L</text>
+        </g>
+
+        <!-- Wago N (nolla) -->
+        <g transform="translate(117, 220)">
+          <rect x="0" y="0" width="38" height="13" fill="url(#k-wago-body)" stroke="#bbb" stroke-width="1" rx="2"/>
+          <rect x="4" y="3" width="10" height="7" fill="#e0eef8" stroke="#ddd" stroke-width="0.5" rx="1"/>
+          <line x1="5" y1="6.5" x2="13" y2="6.5" stroke="#3498db" stroke-width="1.5"/>
+          <rect x="24" y="3" width="10" height="7" fill="#e0eef8" stroke="#ddd" stroke-width="0.5" rx="1"/>
+          <line x1="25" y1="6.5" x2="33" y2="6.5" stroke="#3498db" stroke-width="1.5"/>
+          <rect x="2" y="-5" width="14" height="6" fill="#e67e22" stroke="#d35400" stroke-width="0.8" rx="1.5"/>
+          <rect x="22" y="-5" width="14" height="6" fill="#e67e22" stroke="#d35400" stroke-width="0.8" rx="1.5"/>
+          <text x="19" y="10" text-anchor="middle" font-size="7" fill="#555" font-weight="700">N</text>
+        </g>
+
+        <!-- Wago PE (jord) -->
+        <g transform="translate(117, 245)">
+          <rect x="0" y="0" width="38" height="13" fill="url(#k-wago-body)" stroke="#bbb" stroke-width="1" rx="2"/>
+          <rect x="4" y="3" width="10" height="7" fill="#e0f5e8" stroke="#ddd" stroke-width="0.5" rx="1"/>
+          <line x1="5" y1="6.5" x2="13" y2="6.5" stroke="#27ae60" stroke-width="1.5"/>
+          <rect x="24" y="3" width="10" height="7" fill="#e0f5e8" stroke="#ddd" stroke-width="0.5" rx="1"/>
+          <line x1="25" y1="6.5" x2="33" y2="6.5" stroke="#27ae60" stroke-width="1.5"/>
+          <rect x="2" y="-5" width="14" height="6" fill="#e67e22" stroke="#d35400" stroke-width="0.8" rx="1.5"/>
+          <rect x="22" y="-5" width="14" height="6" fill="#e67e22" stroke="#d35400" stroke-width="0.8" rx="1.5"/>
+          <text x="19" y="10" text-anchor="middle" font-size="7" fill="#555" font-weight="700">PE</text>
+        </g>
+
+        <!-- Wago label with leader line -->
+        <line x1="156" y1="222" x2="195" y2="152" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2"/>
+        <circle cx="195" cy="152" r="2" fill="#888"/>
+        <text x="200" y="145" font-size="10" fill="#555" font-weight="600">Wago 221 skarvklämmor</text>
+        <text x="200" y="158" font-size="8" fill="#888">3 st — en per ledare (L + N + PE)</text>
+        <text x="200" y="170" font-size="8" fill="#888">Spakklämma, snabb &amp; tillförlitlig</text>
+
+        <!-- Conductor color legend near Wagos -->
+        <g transform="translate(200, 178)">
+          <line x1="0" y1="4" x2="12" y2="4" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+          <text x="16" y="8" font-size="7" fill="#666">L (fas, brun)</text>
+          <line x1="80" y1="4" x2="92" y2="4" stroke="#3498db" stroke-width="2" stroke-linecap="round"/>
+          <text x="96" y="8" font-size="7" fill="#666">N (nolla, blå)</text>
+          <line x1="160" y1="4" x2="172" y2="4" stroke="url(#k-pe-stripe)" stroke-width="2" stroke-linecap="round"/>
+          <text x="176" y="8" font-size="7" fill="#666">PE (jord, gul/grön)</text>
+        </g>
+
+        <!-- Outgoing EKK 3G1.5 cable — dashed, going down and right -->
+        <path d="M139,258 L139,310 Q139,325 154,325 L340,325" fill="none" stroke="#e67e22" stroke-width="4" stroke-dasharray="8,4" stroke-linecap="round"/>
+        <!-- Arrow at end of cable -->
+        <polygon points="340,321 350,325 340,329" fill="#e67e22"/>
+        <!-- Cable label -->
+        <text x="250" y="318" text-anchor="middle" font-size="9" fill="#e67e22" font-weight="600">EKK 3G1.5</text>
+        <text x="250" y="340" text-anchor="middle" font-size="8" fill="#e67e22">till bokhyllans uttag (U1–U5)</text>
+
+        <!-- Cover plate / blindplatta -->
+        <rect x="166" y="162" width="8" height="142" fill="url(#k-cover-grad)" stroke="#aaa" stroke-width="1.5" rx="1"/>
+        <rect x="166" y="162" width="8" height="142" fill="url(#k-metal)" opacity="0.3" rx="1"/>
+        <!-- Screw holes on cover -->
+        <circle cx="170" cy="172" r="2.5" fill="#bbb" stroke="#999" stroke-width="0.5"/>
+        <circle cx="170" cy="294" r="2.5" fill="#bbb" stroke="#999" stroke-width="0.5"/>
+        <!-- Cover label -->
+        <line x1="174" y1="233" x2="195" y2="260" stroke="#aaa" stroke-width="0.8"/>
+        <text x="197" y="268" font-size="9" fill="#777" font-weight="600">Blindplatta / lock</text>
+        <text x="197" y="280" font-size="8" fill="#999">Monteras flush på väggyta</text>
+
+        <!-- Media unit — semi-transparent dark rectangle -->
+        <rect x="200" y="105" width="200" height="268" fill="#2c3035" stroke="#c0392b" stroke-width="2" rx="5" opacity="0.12"/>
+        <rect x="200" y="105" width="200" height="268" fill="none" stroke="#c0392b" stroke-width="2" rx="5" stroke-dasharray="8,4"/>
+        <!-- Cross-hatch inside to show it's blocking -->
+        <line x1="210" y1="115" x2="390" y2="363" stroke="#c0392b" stroke-width="0.5" opacity="0.3"/>
+        <line x1="390" y1="115" x2="210" y2="363" stroke="#c0392b" stroke-width="0.5" opacity="0.3"/>
+        <!-- Media unit labels -->
+        <text x="300" y="200" text-anchor="middle" font-size="13" fill="#c0392b" font-weight="700">MEDIAENHET</text>
+        <text x="300" y="218" text-anchor="middle" font-size="10" fill="#c0392b">(TV-bänk / underskåp)</text>
+        <text x="300" y="248" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="600">Stickpropp ryms ej</text>
+        <!-- Warning icon -->
+        <g transform="translate(267, 252)">
+          <polygon points="8,0 16,14 0,14" fill="#c0392b" stroke="#a02010" stroke-width="0.8" stroke-linejoin="round"/>
+          <text x="8" y="12" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">!</text>
+          <text x="22" y="12" font-size="9" fill="#c0392b">Blockerad åtkomst</text>
+        </g>
+
+        <!-- ============================================ -->
+        <!-- DIMENSION LINES                              -->
+        <!-- ============================================ -->
+
+        <!-- Wall thickness: 120mm -->
+        <line x1="30" y1="400" x2="150" y2="400" stroke="#888" stroke-width="0.8" marker-start="url(#k-arrow-start)" marker-end="url(#k-arrow-end)"/>
+        <line x1="30" y1="376" x2="30" y2="406" stroke="#888" stroke-width="0.5"/>
+        <line x1="150" y1="376" x2="150" y2="406" stroke="#888" stroke-width="0.5"/>
+        <rect x="60" y="394" width="50" height="13" fill="#f6f5f1" rx="2"/>
+        <text x="85" y="404" text-anchor="middle" font-size="8" fill="#888" font-weight="600">~120 mm</text>
+
+        <!-- Apparatdosa depth: 65mm -->
+        <line x1="108" y1="162" x2="170" y2="162" stroke="#888" stroke-width="0.8" marker-start="url(#k-arrow-start)" marker-end="url(#k-arrow-end)"/>
+        <line x1="108" y1="156" x2="108" y2="165" stroke="#888" stroke-width="0.5"/>
+        <line x1="170" y1="156" x2="170" y2="165" stroke="#888" stroke-width="0.5"/>
+        <text x="139" y="159" text-anchor="middle" font-size="7" fill="#888">~65 mm djup</text>
+
+        <!-- Cover to media unit gap -->
+        <line x1="174" y1="355" x2="200" y2="355" stroke="#888" stroke-width="0.8" marker-start="url(#k-arrow-start)" marker-end="url(#k-arrow-end)"/>
+        <line x1="174" y1="349" x2="174" y2="361" stroke="#888" stroke-width="0.5"/>
+        <line x1="200" y1="349" x2="200" y2="361" stroke="#888" stroke-width="0.5"/>
+        <text x="187" y="350" text-anchor="middle" font-size="6" fill="#888">~30 mm</text>
+
+        <!-- Height from floor -->
+        <line x1="425" y1="300" x2="425" y2="368" stroke="#888" stroke-width="0.8" marker-start="url(#k-arrow-start)" marker-end="url(#k-arrow-end)"/>
+        <line x1="420" y1="300" x2="430" y2="300" stroke="#888" stroke-width="0.5"/>
+        <line x1="420" y1="368" x2="430" y2="368" stroke="#888" stroke-width="0.5"/>
+        <text x="437" y="340" font-size="7" fill="#888" transform="rotate(-90,437,340)">~50 mm fr golv</text>
+
+        <!-- ============================================ -->
+        <!-- STEP-BY-STEP PANEL (right ~35%)              -->
+        <!-- ============================================ -->
+
+        <!-- Panel background -->
+        <rect x="478" y="38" width="290" height="310" fill="#faf9f5" stroke="#e3ddcc" stroke-width="1" rx="6"/>
+        <text x="623" y="58" text-anchor="middle" font-size="12" fill="#333" font-weight="700" letter-spacing="0.02em">Arbetsmoment</text>
+        <line x1="498" y1="64" x2="748" y2="64" stroke="#e3ddcc" stroke-width="1"/>
+
+        <!-- Step 1 -->
+        <circle cx="505" cy="86" r="10" fill="#4f7560"/>
+        <text x="505" y="90" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
+        <text x="522" y="83" font-size="9" fill="#333" font-weight="700">Bryt strömmen</text>
+        <text x="522" y="94" font-size="7.5" fill="#555">Slå av aktuell säkring i elcentralen.</text>
+        <text x="522" y="104" font-size="7.5" fill="#555">Verifiera med spänningsprovare.</text>
+
+        <!-- Step 2 -->
+        <circle cx="505" cy="124" r="10" fill="#4f7560"/>
+        <text x="505" y="128" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">2</text>
+        <text x="522" y="121" font-size="9" fill="#333" font-weight="700">Demontera uttaget</text>
+        <text x="522" y="132" font-size="7.5" fill="#555">Skruva loss täckplattan, lossa uttaget</text>
+        <text x="522" y="142" font-size="7.5" fill="#555">från apparatdosan, koppla loss ledarna.</text>
+
+        <!-- Step 3 -->
+        <circle cx="505" cy="163" r="10" fill="#4f7560"/>
+        <text x="505" y="167" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">3</text>
+        <text x="522" y="160" font-size="9" fill="#333" font-weight="700">Förbered utgående kabel</text>
+        <text x="522" y="171" font-size="7.5" fill="#555">Dra in EKK 3G1.5 genom knockning i</text>
+        <text x="522" y="181" font-size="7.5" fill="#555">apparatdosans undersida. Avmantle ~10 mm.</text>
+
+        <!-- Step 4 -->
+        <circle cx="505" cy="203" r="10" fill="#4f7560"/>
+        <text x="505" y="207" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">4</text>
+        <text x="522" y="199" font-size="9" fill="#333" font-weight="700">Anslut med Wago 221</text>
+        <text x="522" y="210" font-size="7.5" fill="#555">Koppla samman matning + utgående:</text>
+        <text x="522" y="220" font-size="7.5" fill="#e67e22">L</text>
+        <text x="530" y="220" font-size="7.5" fill="#555">+</text>
+        <text x="536" y="220" font-size="7.5" fill="#e67e22">L</text>
+        <text x="548" y="220" font-size="7.5" fill="#3498db">N</text>
+        <text x="556" y="220" font-size="7.5" fill="#555">+</text>
+        <text x="562" y="220" font-size="7.5" fill="#3498db">N</text>
+        <text x="574" y="220" font-size="7.5" fill="#27ae60">PE</text>
+        <text x="587" y="220" font-size="7.5" fill="#555">+</text>
+        <text x="594" y="220" font-size="7.5" fill="#27ae60">PE</text>
+        <text x="612" y="220" font-size="7.5" fill="#888">(en Wago / ledare)</text>
+
+        <!-- Step 5 -->
+        <circle cx="505" cy="243" r="10" fill="#4f7560"/>
+        <text x="505" y="247" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">5</text>
+        <text x="522" y="239" font-size="9" fill="#333" font-weight="700">Ordna kablarna</text>
+        <text x="522" y="250" font-size="7.5" fill="#555">Vik in ledarna prydligt. Kontrollera att</text>
+        <text x="522" y="260" font-size="7.5" fill="#555">Wago-klämmorna sitter fast. Dragavlastning.</text>
+
+        <!-- Step 6 -->
+        <circle cx="505" cy="283" r="10" fill="#4f7560"/>
+        <text x="505" y="287" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">6</text>
+        <text x="522" y="279" font-size="9" fill="#333" font-weight="700">Montera lock</text>
+        <text x="522" y="290" font-size="7.5" fill="#555">Sätt fast blindplatta/lock över dosan.</text>
+        <text x="522" y="300" font-size="7.5" fill="#555">Dra utgående kabel längs underskåpets</text>
+        <text x="522" y="310" font-size="7.5" fill="#555">bakkant. Slå på strömmen, provmät.</text>
+
+        <!-- Vertical step connector line -->
+        <line x1="505" y1="96" x2="505" y2="114" stroke="#4f7560" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="505" y1="134" x2="505" y2="153" stroke="#4f7560" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="505" y1="173" x2="505" y2="193" stroke="#4f7560" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="505" y1="213" x2="505" y2="233" stroke="#4f7560" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="505" y1="253" x2="505" y2="273" stroke="#4f7560" stroke-width="1" stroke-dasharray="2,2"/>
+
+        <!-- ============================================ -->
+        <!-- INFO BOX bottom-right                        -->
+        <!-- ============================================ -->
+        <rect x="478" y="358" width="290" height="50" fill="#d6e8d9" stroke="#4f7560" stroke-width="1.2" rx="6"/>
+        <text x="623" y="377" text-anchor="middle" font-size="10" fill="#2c5734" font-weight="700">Minimalt ingrepp</text>
+        <text x="623" y="392" text-anchor="middle" font-size="8.5" fill="#3a6648">Befintlig apparatdosa återanvänds.</text>
+        <text x="623" y="403" text-anchor="middle" font-size="8.5" fill="#3a6648">Inga nya hål i vägg.</text>
+
+        <!-- ============================================ -->
+        <!-- MATERIAL LEGEND bottom-left                  -->
+        <!-- ============================================ -->
+        <rect x="20" y="385" width="200" height="30" fill="#faf9f5" stroke="#e3ddcc" stroke-width="1" rx="4"/>
+        <text x="28" y="397" font-size="7" fill="#888" font-weight="600">MATERIAL:</text>
+        <!-- Wall -->
+        <rect x="68" y="390" width="14" height="8" fill="url(#k-wall-grad)" stroke="#a09880" stroke-width="0.5" rx="1"/>
+        <rect x="68" y="390" width="14" height="8" fill="url(#k-plaster)" rx="1"/>
+        <text x="85" y="397" font-size="6.5" fill="#888">Vägg</text>
+        <!-- Metal -->
+        <rect x="106" y="390" width="14" height="8" fill="url(#k-cover-grad)" stroke="#aaa" stroke-width="0.5" rx="1"/>
+        <text x="123" y="397" font-size="6.5" fill="#888">Metall</text>
+        <!-- Cable -->
+        <line x1="148" y1="394" x2="166" y2="394" stroke="#e67e22" stroke-width="2.5" stroke-dasharray="4,2"/>
+        <text x="170" y="397" font-size="6.5" fill="#888">Kabel</text>
+        <!-- Warning -->
+        <rect x="192" y="390" width="14" height="8" fill="none" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2" rx="1"/>
+        <text x="210" y="397" font-size="6.5" fill="#888">Hinder</text>
+      </svg>
+    </div>
+
+    <!-- U1/U2 — Passbit-uttag -->
+    <h3>U1 &amp; U2 — Infällt uttag i passbit (bokhylla)</h3>
+    <div class="mockup-container" style="padding:16px;">
+      <svg viewBox="0 0 780 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:780px;height:auto;">
+        <defs>
+          <!-- Wood grain pattern for passbit -->
+          <pattern id="u12-woodGrain" x="0" y="0" width="6" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(2)">
+            <line x1="0" y1="0" x2="0" y2="40" stroke="#b08040" stroke-width="0.5" opacity="0.18"/>
+            <line x1="2" y1="0" x2="2" y2="40" stroke="#a07535" stroke-width="0.3" opacity="0.12"/>
+            <line x1="4.5" y1="0" x2="4.5" y2="40" stroke="#b58945" stroke-width="0.4" opacity="0.15"/>
+          </pattern>
+          <!-- Wall texture pattern -->
+          <pattern id="u12-wallTex" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+            <rect width="8" height="8" fill="#d5cfc0"/>
+            <circle cx="2" cy="2" r="0.5" fill="#c8c0ae" opacity="0.5"/>
+            <circle cx="6" cy="6" r="0.4" fill="#ccc4b2" opacity="0.4"/>
+            <circle cx="5" cy="1" r="0.3" fill="#c5bda8" opacity="0.3"/>
+          </pattern>
+          <!-- Passbit gradient -->
+          <linearGradient id="u12-passbitGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#c8a872"/>
+            <stop offset="40%" stop-color="#d4b882"/>
+            <stop offset="100%" stop-color="#a8884a"/>
+          </linearGradient>
+          <!-- Wall gradient -->
+          <linearGradient id="u12-wallGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#d5cfc0"/>
+            <stop offset="100%" stop-color="#c2b8a0"/>
+          </linearGradient>
+          <!-- Depth shadow for recess -->
+          <linearGradient id="u12-recessDepth" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#2c2010" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#2c2010" stop-opacity="0.05"/>
+          </linearGradient>
+          <!-- Outlet body gradient -->
+          <linearGradient id="u12-outletBody" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f0ece0"/>
+            <stop offset="100%" stop-color="#ddd8c8"/>
+          </linearGradient>
+          <!-- Arrowhead marker -->
+          <marker id="u12-arrowDim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#777"/>
+          </marker>
+          <marker id="u12-arrowRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#c0392b"/>
+          </marker>
+          <!-- Front-view wood grain (horizontal lines for vertical board) -->
+          <pattern id="u12-woodGrainV" x="0" y="0" width="40" height="6" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="40" y2="0" stroke="#b08040" stroke-width="0.5" opacity="0.14"/>
+            <line x1="0" y1="2.5" x2="40" y2="2.5" stroke="#a07535" stroke-width="0.3" opacity="0.10"/>
+            <line x1="0" y1="4.8" x2="40" y2="4.8" stroke="#b58945" stroke-width="0.35" opacity="0.12"/>
+          </pattern>
+          <!-- Step circle gradient -->
+          <radialGradient id="u12-stepCircle">
+            <stop offset="0%" stop-color="#5a8a6e"/>
+            <stop offset="100%" stop-color="#4f7560"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Background -->
+        <rect x="0" y="0" width="780" height="420" fill="#f6f5f1" rx="6"/>
+
+        <!-- =========================================== -->
+        <!-- TITLE BAR                                    -->
+        <!-- =========================================== -->
+        <text x="156" y="20" text-anchor="middle" font-size="12" fill="#333" font-weight="700" letter-spacing="0.3">SNITT GENOM PASSBIT</text>
+        <text x="390" y="20" text-anchor="middle" font-size="12" fill="#333" font-weight="700" letter-spacing="0.3">VY FRAMIFRÅN</text>
+        <line x1="310" y1="8" x2="310" y2="394" stroke="#dcd6c8" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="488" y1="8" x2="488" y2="394" stroke="#dcd6c8" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- =========================================== -->
+        <!-- LEFT SIDE: CROSS-SECTION VIEW (~40%)         -->
+        <!-- =========================================== -->
+
+        <!-- Wall -->
+        <rect x="18" y="34" width="68" height="310" fill="url(#u12-wallGrad)" stroke="#b0a890" stroke-width="1.5"/>
+        <rect x="18" y="34" width="68" height="310" fill="url(#u12-wallTex)" opacity="0.6"/>
+        <text x="52" y="200" text-anchor="middle" font-size="11" fill="#8a8070" font-weight="600" transform="rotate(-90,52,200)">VÄGG</text>
+
+        <!-- Air gap (cable routing space) -->
+        <rect x="86" y="34" width="16" height="310" fill="#f5f0e2" stroke="none"/>
+        <rect x="86" y="34" width="16" height="310" fill="none" stroke="#d0c8b0" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+        <!-- EKK cable running vertically in gap -->
+        <line x1="94" y1="34" x2="94" y2="344" stroke="#e67e22" stroke-width="3.5" stroke-dasharray="8,4" stroke-linecap="round"/>
+        <!-- Cable sheath highlight -->
+        <line x1="92" y1="34" x2="92" y2="344" stroke="#f0a050" stroke-width="0.8" opacity="0.4"/>
+
+        <!-- Cable label -->
+        <text x="80" y="80" text-anchor="middle" font-size="7.5" fill="#e67e22" font-weight="600" transform="rotate(-90,80,80)">EKK 3G1.5</text>
+
+        <!-- Passbit with wood grain -->
+        <rect x="102" y="34" width="62" height="310" fill="url(#u12-passbitGrad)" stroke="#a8884a" stroke-width="1.5" rx="2"/>
+        <rect x="102" y="34" width="62" height="310" fill="url(#u12-woodGrain)" rx="2"/>
+        <!-- Subtle edge bevel -->
+        <line x1="103" y1="35" x2="103" y2="343" stroke="#d8c090" stroke-width="0.8" opacity="0.5"/>
+
+        <!-- Passbit label -->
+        <text x="133" y="85" text-anchor="middle" font-size="9" fill="#5a3e1b" font-weight="600" transform="rotate(-90,133,85)">PASSBIT (~50 mm)</text>
+
+        <!-- ---- Hyllplan (shelf crossing above outlet) ---- -->
+        <rect x="102" y="130" width="120" height="6" fill="#a8b5bf" stroke="#8a9baa" stroke-width="1"/>
+        <text x="183" y="130" font-size="8" fill="#6a7a88" font-weight="500">Hyllplan</text>
+
+        <!-- ---- Recessed cavity in passbit ---- -->
+        <!-- Cavity shadow/depth -->
+        <rect x="115" y="142" width="38" height="88" fill="url(#u12-recessDepth)" rx="2"/>
+        <!-- Cavity opening -->
+        <rect x="117" y="144" width="34" height="84" fill="#3a2e1c" rx="2" opacity="0.15"/>
+
+        <!-- Outlet body (apparatdosa) recessed -->
+        <rect x="119" y="146" width="30" height="80" fill="url(#u12-outletBody)" stroke="#999" stroke-width="1.5" rx="3"/>
+        <!-- Outlet inner shadow -->
+        <rect x="120" y="147" width="28" height="78" fill="none" stroke="#c5c0b0" stroke-width="0.5" rx="2.5"/>
+
+        <!-- Schuko socket (realistic round socket) -->
+        <circle cx="134" cy="173" r="12" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <!-- Socket inner ring -->
+        <circle cx="134" cy="173" r="10" fill="none" stroke="#bbb" stroke-width="0.5"/>
+        <!-- Earth contact pins (vertical bars) -->
+        <rect x="126" y="162" width="2" height="22" fill="#888" rx="0.5"/>
+        <rect x="140" y="162" width="2" height="22" fill="#888" rx="0.5"/>
+        <!-- Socket holes (L and N) -->
+        <circle cx="130" cy="169" r="2" fill="#555"/>
+        <circle cx="138" cy="169" r="2" fill="#555"/>
+        <!-- Socket hole lower -->
+        <circle cx="130" cy="177" r="2" fill="#555"/>
+        <circle cx="138" cy="177" r="2" fill="#555"/>
+        <!-- Socket center notch -->
+        <circle cx="134" cy="173" r="1" fill="#ddd"/>
+
+        <!-- USB-C port below Schuko -->
+        <rect x="126" y="196" width="16" height="6" fill="#444" stroke="#333" stroke-width="1" rx="2"/>
+        <!-- USB-C inner -->
+        <rect x="128" y="197.5" width="12" height="3" fill="#555" rx="1.5"/>
+        <text x="134" y="213" text-anchor="middle" font-size="7" fill="#555" font-weight="500">USB-C</text>
+
+        <!-- Cable loop entering outlet from gap -->
+        <path d="M 94,170 C 100,170 108,165 117,168" stroke="#e67e22" stroke-width="2.5" fill="none" stroke-dasharray="5,3"/>
+        <!-- Cable loop label -->
+        <text x="95" y="160" font-size="6" fill="#d35400">kabelslinga</text>
+
+        <!-- Bokhyllesida (shelf side panel) -->
+        <rect x="220" y="34" width="10" height="310" fill="#c2cdd6" stroke="#8a9baa" stroke-width="1"/>
+        <text x="225" y="200" text-anchor="middle" font-size="7" fill="#6a7a88" transform="rotate(-90,225,200)">BOKHYLLESIDA</text>
+
+        <!-- ---- DIMENSION LINES ---- -->
+
+        <!-- Passbit thickness: 50mm -->
+        <line x1="102" y1="360" x2="164" y2="360" stroke="#777" stroke-width="0.8" marker-start="url(#u12-arrowDim)" marker-end="url(#u12-arrowDim)"/>
+        <line x1="102" y1="355" x2="102" y2="365" stroke="#777" stroke-width="0.8"/>
+        <line x1="164" y1="355" x2="164" y2="365" stroke="#777" stroke-width="0.8"/>
+        <text x="133" y="374" text-anchor="middle" font-size="8" fill="#555" font-weight="600">50 mm</text>
+
+        <!-- Cable gap: ~12mm -->
+        <line x1="86" y1="354" x2="102" y2="354" stroke="#777" stroke-width="0.8" marker-start="url(#u12-arrowDim)" marker-end="url(#u12-arrowDim)"/>
+        <line x1="86" y1="349" x2="86" y2="359" stroke="#777" stroke-width="0.8"/>
+        <text x="94" y="348" text-anchor="middle" font-size="7" fill="#555">~12</text>
+
+        <!-- Recess depth (red warning) -->
+        <line x1="117" y1="238" x2="149" y2="238" stroke="#c0392b" stroke-width="1" marker-start="url(#u12-arrowRed)" marker-end="url(#u12-arrowRed)"/>
+        <line x1="117" y1="233" x2="117" y2="243" stroke="#c0392b" stroke-width="0.8"/>
+        <line x1="149" y1="233" x2="149" y2="243" stroke="#c0392b" stroke-width="0.8"/>
+        <text x="133" y="252" text-anchor="middle" font-size="8" fill="#c0392b" font-weight="700">Djup ??</text>
+
+        <!-- ---- RED WARNING CALLOUT ---- -->
+        <rect x="22" y="380" width="270" height="28" fill="#fdeaea" stroke="#c0392b" stroke-width="1.2" rx="5"/>
+        <text x="157" y="398" text-anchor="middle" font-size="8.5" fill="#c0392b" font-weight="700">&#9888; Kontrollera att infällningsdjup &#8804; passbitens tjocklek!</text>
+
+        <!-- ---- MATERIAL LEGEND (bottom left) ---- -->
+        <rect x="18" y="295" width="64" height="48" fill="#faf8f1" stroke="#e3ddcc" stroke-width="0.8" rx="4"/>
+        <text x="50" y="306" text-anchor="middle" font-size="6.5" fill="#777" font-weight="600">MATERIAL</text>
+        <rect x="22" y="310" width="10" height="6" fill="url(#u12-passbitGrad)" stroke="#a8884a" stroke-width="0.5" rx="1"/>
+        <text x="36" y="316" font-size="6" fill="#666">Massivträ</text>
+        <rect x="22" y="320" width="10" height="6" fill="#a8b5bf" stroke="#8a9baa" stroke-width="0.5" rx="1"/>
+        <text x="36" y="326" font-size="6" fill="#666">MDF</text>
+        <rect x="22" y="330" width="10" height="6" fill="url(#u12-wallGrad)" stroke="#b0a890" stroke-width="0.5" rx="1"/>
+        <text x="36" y="336" font-size="6" fill="#666">Vägg</text>
+
+
+        <!-- =========================================== -->
+        <!-- CENTER: FRONT VIEW (~25%)                    -->
+        <!-- =========================================== -->
+
+        <!-- Passbit as tall vertical strip -->
+        <rect x="335" y="34" width="50" height="310" fill="url(#u12-passbitGrad)" stroke="#a8884a" stroke-width="1.5" rx="2"/>
+        <rect x="335" y="34" width="50" height="310" fill="url(#u12-woodGrainV)" rx="2"/>
+
+        <!-- Shelf HP2 -->
+        <rect x="325" y="110" width="70" height="5" fill="#a8b5bf" stroke="#8a9baa" stroke-width="1"/>
+        <text x="400" y="114" font-size="7" fill="#6a7a88">HP 2</text>
+
+        <!-- U1 outlet face plate -->
+        <rect x="343" y="120" width="34" height="60" fill="url(#u12-outletBody)" stroke="#999" stroke-width="1.2" rx="3"/>
+        <!-- U1 Schuko front -->
+        <circle cx="360" cy="140" r="10" fill="#fff" stroke="#444" stroke-width="1.3"/>
+        <circle cx="360" cy="140" r="8.5" fill="none" stroke="#ccc" stroke-width="0.4"/>
+        <rect x="353" y="131" width="1.8" height="18" fill="#888" rx="0.5"/>
+        <rect x="365" y="131" width="1.8" height="18" fill="#888" rx="0.5"/>
+        <circle cx="357" cy="137" r="1.6" fill="#555"/>
+        <circle cx="363" cy="137" r="1.6" fill="#555"/>
+        <circle cx="357" cy="143" r="1.6" fill="#555"/>
+        <circle cx="363" cy="143" r="1.6" fill="#555"/>
+        <circle cx="360" cy="140" r="0.8" fill="#ddd"/>
+        <!-- U1 USB-C front -->
+        <rect x="353" y="158" width="14" height="5" fill="#555" stroke="#444" stroke-width="0.8" rx="2"/>
+        <rect x="355" y="159.2" width="10" height="2.6" fill="#666" rx="1.3"/>
+        <text x="360" y="172" text-anchor="middle" font-size="6" fill="#555">USB-C</text>
+
+        <!-- U1 label -->
+        <rect x="338" y="183" width="44" height="12" fill="#2980b9" rx="2" opacity="0.12"/>
+        <text x="360" y="192" text-anchor="middle" font-size="8" fill="#2980b9" font-weight="700">U1</text>
+
+        <!-- Shelf HP4 -->
+        <rect x="325" y="210" width="70" height="5" fill="#a8b5bf" stroke="#8a9baa" stroke-width="1"/>
+        <text x="400" y="214" font-size="7" fill="#6a7a88">HP 4</text>
+
+        <!-- U2 outlet face plate -->
+        <rect x="343" y="220" width="34" height="60" fill="url(#u12-outletBody)" stroke="#999" stroke-width="1.2" rx="3"/>
+        <!-- U2 Schuko front -->
+        <circle cx="360" cy="240" r="10" fill="#fff" stroke="#444" stroke-width="1.3"/>
+        <circle cx="360" cy="240" r="8.5" fill="none" stroke="#ccc" stroke-width="0.4"/>
+        <rect x="353" y="231" width="1.8" height="18" fill="#888" rx="0.5"/>
+        <rect x="365" y="231" width="1.8" height="18" fill="#888" rx="0.5"/>
+        <circle cx="357" cy="237" r="1.6" fill="#555"/>
+        <circle cx="363" cy="237" r="1.6" fill="#555"/>
+        <circle cx="357" cy="243" r="1.6" fill="#555"/>
+        <circle cx="363" cy="243" r="1.6" fill="#555"/>
+        <circle cx="360" cy="240" r="0.8" fill="#ddd"/>
+        <!-- U2 USB-C front -->
+        <rect x="353" y="258" width="14" height="5" fill="#555" stroke="#444" stroke-width="0.8" rx="2"/>
+        <rect x="355" y="259.2" width="10" height="2.6" fill="#666" rx="1.3"/>
+        <text x="360" y="272" text-anchor="middle" font-size="6" fill="#555">USB-C</text>
+
+        <!-- U2 label -->
+        <rect x="338" y="283" width="44" height="12" fill="#2980b9" rx="2" opacity="0.12"/>
+        <text x="360" y="292" text-anchor="middle" font-size="8" fill="#2980b9" font-weight="700">U2</text>
+
+        <!-- Vertical cable indicator behind passbit (dashed line) -->
+        <line x1="332" y1="38" x2="332" y2="340" stroke="#e67e22" stroke-width="2" stroke-dasharray="5,4" opacity="0.5"/>
+        <text x="326" y="320" text-anchor="end" font-size="6.5" fill="#e67e22">Kabel bakom</text>
+
+        <!-- Connecting lines from cross-section to front view -->
+        <path d="M 164,135 C 240,135 260,112 325,112" stroke="#aaa" stroke-width="0.6" fill="none" stroke-dasharray="3,3" opacity="0.5"/>
+        <path d="M 164,190 C 240,190 260,170 343,170" stroke="#aaa" stroke-width="0.6" fill="none" stroke-dasharray="3,3" opacity="0.5"/>
+
+        <!-- Shelf labels on front view -->
+        <rect x="325" y="307" width="70" height="5" fill="#a8b5bf" stroke="#8a9baa" stroke-width="0.5" opacity="0.4"/>
+        <text x="400" y="312" font-size="6" fill="#aaa">HP 5</text>
+        <rect x="325" y="64" width="70" height="5" fill="#a8b5bf" stroke="#8a9baa" stroke-width="0.5" opacity="0.4"/>
+        <text x="400" y="68" font-size="6" fill="#aaa">HP 1</text>
+
+        <!-- Front view: passbit bottom label -->
+        <text x="360" y="352" text-anchor="middle" font-size="7" fill="#8a6d3b">passbit 50 mm</text>
+
+
+        <!-- =========================================== -->
+        <!-- RIGHT SIDE: STEP-BY-STEP PANEL (~35%)        -->
+        <!-- =========================================== -->
+
+        <!-- Panel background -->
+        <rect x="496" y="30" width="276" height="340" fill="#faf8f1" stroke="#e3ddcc" stroke-width="1" rx="6"/>
+        <text x="634" y="50" text-anchor="middle" font-size="11" fill="#333" font-weight="700" letter-spacing="0.3">MONTERINGSSTEG</text>
+        <line x1="510" y1="56" x2="758" y2="56" stroke="#e3ddcc" stroke-width="0.8"/>
+
+        <!-- Step 1 -->
+        <circle cx="518" cy="78" r="10" fill="url(#u12-stepCircle)"/>
+        <text x="518" y="82" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
+        <text x="534" y="74" font-size="9" fill="#333" font-weight="700">Markera och fräs urtag</text>
+        <text x="534" y="86" font-size="7.5" fill="#555">Mät infällningsdjupet på valt uttag.</text>
+        <text x="534" y="96" font-size="7.5" fill="#555">Markera hålposition strax under hyll-</text>
+        <text x="534" y="106" font-size="7.5" fill="#555">planet. Fräs/borra urtag i passbiten</text>
+        <text x="534" y="116" font-size="7.5" fill="#555">med lämplig hålsåg.</text>
+
+        <!-- Step 2 -->
+        <circle cx="518" cy="140" r="10" fill="url(#u12-stepCircle)"/>
+        <text x="518" y="144" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">2</text>
+        <text x="534" y="136" font-size="9" fill="#333" font-weight="700">Dra kabel</text>
+        <text x="534" y="148" font-size="7.5" fill="#555">Dra EKK 3G1.5 vertikalt i spalten</text>
+        <text x="534" y="158" font-size="7.5" fill="#555">mellan vägg och passbit. Lämna en</text>
+        <text x="534" y="168" font-size="7.5" fill="#555">kabelslinga vid varje uttag för</text>
+        <text x="534" y="178" font-size="7.5" fill="#555">anslutning. Kabeln kommer underi-</text>
+        <text x="534" y="188" font-size="7.5" fill="#555">från via lågdelen.</text>
+
+        <!-- Step 3 -->
+        <circle cx="518" cy="210" r="10" fill="url(#u12-stepCircle)"/>
+        <text x="518" y="214" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">3</text>
+        <text x="534" y="206" font-size="9" fill="#333" font-weight="700">Anslut uttag</text>
+        <text x="534" y="218" font-size="7.5" fill="#555">Avmantle kabeln ~8 mm. Anslut</text>
+        <text x="534" y="228" font-size="7.5" fill="#555">L (brun), N (blå) och PE (gul/grön)</text>
+        <text x="534" y="238" font-size="7.5" fill="#555">till uttaget. Tryck in i urtaget,</text>
+        <text x="534" y="248" font-size="7.5" fill="#555">skruva fast apparatdosan.</text>
+
+        <!-- Step 4 -->
+        <circle cx="518" cy="272" r="10" fill="url(#u12-stepCircle)"/>
+        <text x="518" y="276" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">4</text>
+        <text x="534" y="268" font-size="9" fill="#333" font-weight="700">Montera täckram</text>
+        <text x="534" y="280" font-size="7.5" fill="#555">Klicka/skruva fast täckramen.</text>
+        <text x="534" y="290" font-size="7.5" fill="#555">Kontrollera att uttaget sitter plant</text>
+        <text x="534" y="300" font-size="7.5" fill="#555">mot passbiten. Provkör med laddare.</text>
+
+        <!-- Wire color reference in step panel -->
+        <rect x="510" y="316" width="248" height="44" fill="#fff" stroke="#e3ddcc" stroke-width="0.8" rx="4"/>
+        <text x="634" y="330" text-anchor="middle" font-size="7" fill="#777" font-weight="600">KABELFÄRGER</text>
+        <rect x="520" y="336" width="14" height="6" fill="#8B4513" rx="1"/>
+        <text x="538" y="342" font-size="6.5" fill="#555">L (fas)</text>
+        <rect x="580" y="336" width="14" height="6" fill="#2980b9" rx="1"/>
+        <text x="598" y="342" font-size="6.5" fill="#555">N (nolla)</text>
+        <rect x="640" y="336" width="14" height="6" fill="#f1c40f" rx="1"/>
+        <line x1="640" y1="339" x2="654" y2="339" stroke="#27ae60" stroke-width="1.5"/>
+        <text x="658" y="342" font-size="6.5" fill="#555">PE (jord)</text>
+
+
+        <!-- =========================================== -->
+        <!-- INFO BOX (bottom)                            -->
+        <!-- =========================================== -->
+        <rect x="496" y="376" width="276" height="36" fill="#f4e4c5" stroke="#d4a843" stroke-width="1" rx="5"/>
+        <text x="510" y="392" font-size="7.5" fill="#7a5a1c" font-weight="600">&#9432; Kontrollera infällningsdjup med Anton.</text>
+        <text x="510" y="404" font-size="7" fill="#8a6d3b">Passbiten är ~50 mm — välj uttag som ryms.</text>
+
+      </svg>
+    </div>
+
+    <!-- U3/U4/U5 — Underskåp-uttag (detaljerad) -->
+    <h3>U3, U4 &amp; U5 — Dubbeluttag (2x Schuko) i underskåp</h3>
+    <div class="mockup-container" style="padding:16px;">
+      <svg viewBox="0 0 780 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:780px;">
+        <defs>
+          <!-- Wood/MDF grain pattern -->
+          <pattern id="u345-mdfGrain" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+            <rect width="6" height="6" fill="#cdd5db"/>
+            <line x1="0" y1="1" x2="6" y2="1.5" stroke="#c2cdd6" stroke-width="0.5" opacity="0.5"/>
+            <line x1="0" y1="3.5" x2="6" y2="4" stroke="#bfc9d1" stroke-width="0.3" opacity="0.4"/>
+            <line x1="0" y1="5.5" x2="6" y2="5" stroke="#c5ced5" stroke-width="0.4" opacity="0.3"/>
+          </pattern>
+          <!-- Cabinet body gradient -->
+          <linearGradient id="u345-cabinetBody" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#d5dbe0"/>
+            <stop offset="100%" stop-color="#c2cdd6"/>
+          </linearGradient>
+          <!-- Cabinet side shadow -->
+          <linearGradient id="u345-cabinetSide" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#b8c3cc"/>
+            <stop offset="100%" stop-color="#cdd5db"/>
+          </linearGradient>
+          <!-- Countertop gradient -->
+          <linearGradient id="u345-countertop" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a8b5bf"/>
+            <stop offset="100%" stop-color="#8a9baa"/>
+          </linearGradient>
+          <!-- Floor depth gradient -->
+          <linearGradient id="u345-floorGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c2cdd6"/>
+            <stop offset="100%" stop-color="#b0bcc6"/>
+          </linearGradient>
+          <!-- Back wall gradient -->
+          <linearGradient id="u345-backWall" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ece8dc"/>
+            <stop offset="100%" stop-color="#e0dbd0"/>
+          </linearGradient>
+          <!-- Arrowhead marker for dimensions -->
+          <marker id="u345-dimArrow" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto-start-reverse">
+            <path d="M0,0 L10,3 L0,6 Z" fill="#888"/>
+          </marker>
+          <!-- Drop shadow filter -->
+          <filter id="u345-cabinetShadow" x="-5%" y="-5%" width="115%" height="115%">
+            <feDropShadow dx="3" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/>
+          </filter>
+          <!-- Soft inner glow for outlet -->
+          <filter id="u345-outletGlow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+          </filter>
+          <!-- Step circle gradient -->
+          <radialGradient id="u345-stepCircle">
+            <stop offset="0%" stop-color="#5a8a6d"/>
+            <stop offset="100%" stop-color="#4f7560"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Background -->
+        <rect x="0" y="0" width="780" height="420" fill="#f6f5f1" rx="6"/>
+
+        <!-- Title -->
+        <text x="210" y="20" text-anchor="middle" font-size="14" fill="#333" font-weight="700" font-family="'Segoe UI',system-ui,sans-serif">Insida underskåp — dubbeluttag (2x Schuko)</text>
+        <text x="210" y="34" text-anchor="middle" font-size="10" fill="#888" font-family="'Segoe UI',system-ui,sans-serif">Isometrisk vy, kabeldragning underifrån</text>
+
+        <!-- ============================================ -->
+        <!-- LEFT SIDE: Isometric cabinet interior view   -->
+        <!-- ============================================ -->
+        <g transform="translate(18, 38)" filter="url(#u345-cabinetShadow)">
+
+          <!-- Cabinet floor (isometric perspective) -->
+          <polygon points="50,260 340,260 380,290 90,290" fill="url(#u345-floorGrad)" stroke="#a0adb8" stroke-width="1.2"/>
+          <!-- Floor grain overlay -->
+          <polygon points="50,260 340,260 380,290 90,290" fill="url(#u345-mdfGrain)" opacity="0.3"/>
+
+          <!-- Cabinet left side wall -->
+          <polygon points="50,55 50,260 90,290 90,85" fill="url(#u345-cabinetSide)" stroke="#a0adb8" stroke-width="1.2"/>
+          <polygon points="50,55 50,260 90,290 90,85" fill="url(#u345-mdfGrain)" opacity="0.25"/>
+
+          <!-- Cabinet back wall -->
+          <polygon points="50,55 340,55 340,260 50,260" fill="url(#u345-backWall)" stroke="#a0adb8" stroke-width="1.2"/>
+          <!-- Back wall subtle texture lines -->
+          <line x1="50" y1="90" x2="340" y2="90" stroke="#d8d3c7" stroke-width="0.5" opacity="0.4"/>
+          <line x1="50" y1="130" x2="340" y2="130" stroke="#d8d3c7" stroke-width="0.5" opacity="0.3"/>
+          <line x1="50" y1="170" x2="340" y2="170" stroke="#d8d3c7" stroke-width="0.5" opacity="0.3"/>
+          <line x1="50" y1="210" x2="340" y2="210" stroke="#d8d3c7" stroke-width="0.5" opacity="0.4"/>
+
+          <!-- Countertop (isometric top plane) -->
+          <polygon points="44,50 334,50 380,80 90,80" fill="url(#u345-countertop)" stroke="#7a8f9c" stroke-width="1.2"/>
+          <!-- Countertop edge thickness -->
+          <polygon points="44,50 44,55 90,85 90,80" fill="#8a9baa" stroke="#7a8f9c" stroke-width="0.8"/>
+          <polygon points="44,55 334,55 380,85 90,85" fill="none" stroke="#7a8f9c" stroke-width="0.5" opacity="0.4"/>
+          <text x="200" y="70" text-anchor="middle" font-size="9" fill="#5b6b78" font-weight="600" opacity="0.7">BÄNKSKIVA</text>
+
+          <!-- Label: back wall -->
+          <text x="195" y="100" text-anchor="middle" font-size="8" fill="#aaa" opacity="0.7">BAKSIDA (insida)</text>
+
+          <!-- ============================== -->
+          <!-- Main cable under floor (dashed, semi-transparent) -->
+          <!-- ============================== -->
+          <g opacity="0.55">
+            <!-- Cable path under floor, horizontal -->
+            <line x1="380" y1="282" x2="90" y2="282" stroke="#e67e22" stroke-width="4" stroke-dasharray="8,4" stroke-linecap="round"/>
+            <!-- Arrow showing direction -->
+            <polygon points="95,278 85,282 95,286" fill="#e67e22" opacity="0.7"/>
+            <text x="235" y="296" text-anchor="middle" font-size="8" fill="#d35400" font-weight="600">EKK 3G1.5 huvudkabel (under skåpbotten)</text>
+            <!-- Arrow label from K -->
+            <text x="382" y="278" font-size="7" fill="#d35400" text-anchor="start">Från K</text>
+          </g>
+
+          <!-- ============================== -->
+          <!-- Floor hole with cable bushing  -->
+          <!-- ============================== -->
+          <!-- Hole in floor -->
+          <ellipse cx="210" cy="262" rx="11" ry="5" fill="#3d3d3d" stroke="#555" stroke-width="1"/>
+          <!-- Genomföringshylsa (cable bushing ring) -->
+          <ellipse cx="210" cy="262" rx="14" ry="6.5" fill="none" stroke="#888" stroke-width="2.5"/>
+          <ellipse cx="210" cy="262" rx="14" ry="6.5" fill="none" stroke="#aaa" stroke-width="1" stroke-dasharray="2,2"/>
+
+          <!-- Branch cable going up from floor through hole -->
+          <path d="M210,282 L210,262" stroke="#e67e22" stroke-width="3" stroke-dasharray="5,3" opacity="0.6"/>
+          <!-- Cable emerging above floor -->
+          <line x1="210" y1="262" x2="210" y2="205" stroke="#e67e22" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Cable bending to outlet -->
+          <path d="M210,205 Q210,195 210,192" stroke="#e67e22" stroke-width="2.5" stroke-linecap="round"/>
+
+          <!-- ============================== -->
+          <!-- Apparatdosa (mounting box) on back wall -->
+          <!-- ============================== -->
+          <rect x="145" y="130" width="130" height="72" fill="#f0ede5" stroke="#bbb" stroke-width="1.5" rx="3"/>
+          <!-- Knockning (cable entry hole) at bottom of box -->
+          <circle cx="210" cy="198" r="6" fill="#555" stroke="#777" stroke-width="1"/>
+          <text x="210" y="200" text-anchor="middle" font-size="5" fill="#ccc">K</text>
+
+          <!-- ============================== -->
+          <!-- Double Schuko outlet         -->
+          <!-- ============================== -->
+          <g filter="url(#u345-outletGlow)">
+            <!-- Cover plate / täckram -->
+            <rect x="150" y="134" width="120" height="64" fill="#fff" stroke="#999" stroke-width="1.5" rx="5"/>
+
+            <!-- Schuko socket 1 (left) -->
+            <g>
+              <circle cx="185" cy="166" r="18" fill="#f7f7f7" stroke="#444" stroke-width="1.8"/>
+              <!-- Earth contact clips (vertical bars) -->
+              <line x1="172" y1="153" x2="172" y2="179" stroke="#777" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="198" y1="153" x2="198" y2="179" stroke="#777" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Phase hole (left) -->
+              <circle cx="179" cy="161" r="2.5" fill="#666"/>
+              <!-- Neutral hole (right) -->
+              <circle cx="191" cy="161" r="2.5" fill="#666"/>
+              <!-- Earth pin contact (bottom) -->
+              <circle cx="179" cy="172" r="2.2" fill="#666"/>
+              <circle cx="191" cy="172" r="2.2" fill="#666"/>
+            </g>
+
+            <!-- Schuko socket 2 (right) — with plug inserted -->
+            <g>
+              <circle cx="235" cy="166" r="18" fill="#f7f7f7" stroke="#444" stroke-width="1.8"/>
+              <!-- Earth contact clips -->
+              <line x1="222" y1="153" x2="222" y2="179" stroke="#777" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="248" y1="153" x2="248" y2="179" stroke="#777" stroke-width="1.8" stroke-linecap="round"/>
+
+              <!-- Plug inserted (simplified) -->
+              <circle cx="235" cy="166" r="14" fill="#2c3035" stroke="#1a1d20" stroke-width="1.5"/>
+              <circle cx="235" cy="166" r="10" fill="#3a3f44" stroke="#2c3035" stroke-width="0.8"/>
+              <!-- Plug cord going down -->
+              <path d="M235,180 Q235,195 245,210 Q255,225 255,240" stroke="#2c3035" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M255,240 L260,250" stroke="#2c3035" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <!-- Label: outlet type -->
+          <text x="210" y="148" text-anchor="middle" font-size="7.5" fill="#555" font-weight="600">2x SCHUKO</text>
+
+          <!-- ============================== -->
+          <!-- Device plugged in (simplified)  -->
+          <!-- ============================== -->
+          <!-- Small device on floor -->
+          <rect x="250" y="240" width="55" height="18" rx="3" fill="#2c3035" stroke="#1a1d20" stroke-width="1"/>
+          <rect x="253" y="243" width="6" height="4" rx="1" fill="#27ae60" opacity="0.8"/>
+          <rect x="262" y="243" width="6" height="4" rx="1" fill="#e74c3c" opacity="0.5"/>
+          <rect x="271" y="243" width="6" height="4" rx="1" fill="#27ae60" opacity="0.6"/>
+          <text x="277" y="255" text-anchor="middle" font-size="6" fill="#aaa">Enhet</text>
+
+          <!-- ============================== -->
+          <!-- Dimension arrows               -->
+          <!-- ============================== -->
+          <!-- Height from floor to outlet center -->
+          <line x1="135" y1="260" x2="135" y2="166" stroke="#888" stroke-width="0.8" marker-start="url(#u345-dimArrow)" marker-end="url(#u345-dimArrow)"/>
+          <line x1="130" y1="260" x2="145" y2="260" stroke="#888" stroke-width="0.5"/>
+          <line x1="130" y1="166" x2="145" y2="166" stroke="#888" stroke-width="0.5"/>
+          <rect x="112" y="205" width="30" height="16" fill="#f6f5f1" rx="2"/>
+          <text x="127" y="216" text-anchor="middle" font-size="8" fill="#888" font-weight="600">~15 cm</text>
+
+          <!-- Bushing label -->
+          <line x1="224" y1="262" x2="280" y2="245" stroke="#888" stroke-width="0.7" stroke-dasharray="2,2"/>
+          <text x="282" y="240" font-size="7" fill="#666" font-weight="600">Genomföringshylsa</text>
+          <text x="282" y="249" font-size="7" fill="#888">25 mm</text>
+
+          <!-- Cable label -->
+          <line x1="215" y1="230" x2="280" y2="218" stroke="#e67e22" stroke-width="0.7" stroke-dasharray="2,2"/>
+          <text x="282" y="216" font-size="7" fill="#d35400" font-weight="600">Avgrening EKK 3G1.5</text>
+
+        </g>
+
+        <!-- ============================================ -->
+        <!-- BOTTOM LEFT: 3 mini cabinet diagrams         -->
+        <!-- ============================================ -->
+        <g transform="translate(20, 344)">
+          <text x="0" y="0" font-size="9" fill="#555" font-weight="700" font-family="'Segoe UI',system-ui,sans-serif">Placering per skåp:</text>
+
+          <!-- U3: Mittenskåp V -->
+          <g transform="translate(0, 10)">
+            <rect x="0" y="0" width="105" height="54" rx="4" fill="#f0ede5" stroke="#ccc" stroke-width="1"/>
+            <rect x="3" y="3" width="99" height="14" rx="2" fill="#3498db"/>
+            <text x="52" y="14" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">U3 — Mittenskåp V</text>
+            <!-- Switch icon -->
+            <rect x="10" y="24" width="18" height="12" rx="2" fill="#2c3035" stroke="#555" stroke-width="0.8"/>
+            <rect x="12" y="26" width="3" height="3" rx="0.5" fill="#27ae60" opacity="0.8"/>
+            <rect x="16" y="26" width="3" height="3" rx="0.5" fill="#27ae60" opacity="0.6"/>
+            <text x="19" y="44" text-anchor="middle" font-size="6" fill="#777">Switch</text>
+            <!-- Media box icon -->
+            <rect x="40" y="24" width="22" height="12" rx="2" fill="#2c3035" stroke="#555" stroke-width="0.8"/>
+            <circle cx="51" cy="30" r="3" fill="none" stroke="#3498db" stroke-width="0.8"/>
+            <text x="51" y="44" text-anchor="middle" font-size="6" fill="#777">Medialåda</text>
+          </g>
+
+          <!-- U4: Mittenskåp H -->
+          <g transform="translate(115, 10)">
+            <rect x="0" y="0" width="115" height="54" rx="4" fill="#f0ede5" stroke="#ccc" stroke-width="1"/>
+            <rect x="3" y="3" width="109" height="14" rx="2" fill="#3498db"/>
+            <text x="57" y="14" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">U4 — Mittenskåp H</text>
+            <!-- Soundbar receiver icon -->
+            <rect x="10" y="24" width="28" height="10" rx="2" fill="#2c3035" stroke="#555" stroke-width="0.8"/>
+            <rect x="13" y="27" width="4" height="4" rx="1" fill="#e67e22" opacity="0.7"/>
+            <text x="24" y="44" text-anchor="middle" font-size="6" fill="#777">Receiver</text>
+            <!-- Media box icon -->
+            <rect x="50" y="24" width="22" height="12" rx="2" fill="#2c3035" stroke="#555" stroke-width="0.8"/>
+            <circle cx="61" cy="30" r="3" fill="none" stroke="#3498db" stroke-width="0.8"/>
+            <text x="61" y="44" text-anchor="middle" font-size="6" fill="#777">Medialåda</text>
+          </g>
+
+          <!-- U5: Teknikskåp -->
+          <g transform="translate(240, 10)">
+            <rect x="0" y="0" width="140" height="54" rx="4" fill="#f0ede5" stroke="#ccc" stroke-width="1"/>
+            <rect x="3" y="3" width="134" height="14" rx="2" fill="#3498db"/>
+            <text x="70" y="14" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">U5 — Teknikskåp</text>
+            <!-- Router icon -->
+            <rect x="10" y="24" width="20" height="10" rx="2" fill="#2c3035" stroke="#555" stroke-width="0.8"/>
+            <line x1="15" y1="24" x2="13" y2="19" stroke="#555" stroke-width="0.8"/>
+            <line x1="25" y1="24" x2="27" y2="19" stroke="#555" stroke-width="0.8"/>
+            <text x="20" y="44" text-anchor="middle" font-size="6" fill="#777">Router</text>
+            <!-- Network switch icon -->
+            <rect x="40" y="24" width="18" height="12" rx="2" fill="#2c3035" stroke="#555" stroke-width="0.8"/>
+            <rect x="42" y="26" width="3" height="3" rx="0.5" fill="#27ae60" opacity="0.8"/>
+            <rect x="46" y="26" width="3" height="3" rx="0.5" fill="#27ae60" opacity="0.6"/>
+            <rect x="50" y="26" width="3" height="3" rx="0.5" fill="#e67e22" opacity="0.6"/>
+            <text x="49" y="44" text-anchor="middle" font-size="6" fill="#777">Switch</text>
+            <!-- NAS icon -->
+            <rect x="70" y="22" width="16" height="16" rx="2" fill="#2c3035" stroke="#555" stroke-width="0.8"/>
+            <line x1="73" y1="28" x2="83" y2="28" stroke="#555" stroke-width="0.6"/>
+            <line x1="73" y1="32" x2="83" y2="32" stroke="#555" stroke-width="0.6"/>
+            <circle cx="82" cy="26" r="1.2" fill="#27ae60" opacity="0.8"/>
+            <circle cx="82" cy="30" r="1.2" fill="#3498db" opacity="0.7"/>
+            <text x="78" y="44" text-anchor="middle" font-size="6" fill="#777">NAS</text>
+          </g>
+        </g>
+
+        <!-- ============================================ -->
+        <!-- RIGHT SIDE: Step-by-step panel               -->
+        <!-- ============================================ -->
+        <g transform="translate(440, 12)">
+          <!-- Panel background -->
+          <rect x="0" y="0" width="330" height="400" rx="8" fill="#fff" stroke="#e3ddcc" stroke-width="1"/>
+
+          <!-- Panel title -->
+          <rect x="0" y="0" width="330" height="32" rx="8" fill="#4f7560"/>
+          <!-- Fix bottom corners of title bar -->
+          <rect x="0" y="20" width="330" height="12" fill="#4f7560"/>
+          <text x="165" y="21" text-anchor="middle" font-size="12" fill="#fff" font-weight="700" font-family="'Segoe UI',system-ui,sans-serif">Monteringssteg</text>
+
+          <!-- Step 1 -->
+          <g transform="translate(16, 48)">
+            <circle cx="14" cy="14" r="14" fill="url(#u345-stepCircle)"/>
+            <text x="14" y="18" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">1</text>
+            <text x="36" y="12" font-size="10" fill="#333" font-weight="700" font-family="'Segoe UI',system-ui,sans-serif">Markera position</text>
+            <text x="36" y="24" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">Bestäm uttagets höjd på skåpets baksida</text>
+            <text x="36" y="34" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">(~15 cm från botten). Markera hålcentrum</text>
+            <text x="36" y="44" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">för kabelingång i skåpbotten rakt under uttaget.</text>
+          </g>
+
+          <!-- Step connector line -->
+          <line x1="30" y1="100" x2="30" y2="114" stroke="#4f7560" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.5"/>
+
+          <!-- Step 2 -->
+          <g transform="translate(16, 116)">
+            <circle cx="14" cy="14" r="14" fill="url(#u345-stepCircle)"/>
+            <text x="14" y="18" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">2</text>
+            <text x="36" y="12" font-size="10" fill="#333" font-weight="700" font-family="'Segoe UI',system-ui,sans-serif">Borra kabelingång</text>
+            <text x="36" y="24" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">Borra 25 mm hål i skåpbotten. Montera</text>
+            <text x="36" y="34" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">genomföringshylsa i hålet för att skydda</text>
+            <text x="36" y="44" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">kabeln och ge snygg finish.</text>
+          </g>
+
+          <!-- Step connector line -->
+          <line x1="30" y1="168" x2="30" y2="182" stroke="#4f7560" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.5"/>
+
+          <!-- Step 3 -->
+          <g transform="translate(16, 184)">
+            <circle cx="14" cy="14" r="14" fill="url(#u345-stepCircle)"/>
+            <text x="14" y="18" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">3</text>
+            <text x="36" y="12" font-size="10" fill="#333" font-weight="700" font-family="'Segoe UI',system-ui,sans-serif">Montera apparatdosa</text>
+            <text x="36" y="24" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">Skruva fast utanpåliggande apparatdosa på</text>
+            <text x="36" y="34" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">skåpets baksida. Använd dosa med knockningar</text>
+            <text x="36" y="44" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">för kabelingång underifrån.</text>
+          </g>
+
+          <!-- Step connector line -->
+          <line x1="30" y1="236" x2="30" y2="250" stroke="#4f7560" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.5"/>
+
+          <!-- Step 4 -->
+          <g transform="translate(16, 252)">
+            <circle cx="14" cy="14" r="14" fill="url(#u345-stepCircle)"/>
+            <text x="14" y="18" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">4</text>
+            <text x="36" y="12" font-size="10" fill="#333" font-weight="700" font-family="'Segoe UI',system-ui,sans-serif">Anslut kabel</text>
+            <text x="36" y="24" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">Dra avgrening från huvudkabeln genom skåp-</text>
+            <text x="36" y="34" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">botten och in i apparatdosan. Avmantle ~8 mm</text>
+            <text x="36" y="44" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">per ledare. Anslut:</text>
+            <!-- Wire color indicators -->
+            <circle cx="42" cy="56" r="3.5" fill="#a0522d" stroke="#8b4513" stroke-width="0.8"/>
+            <text x="50" y="59" font-size="7.5" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">L (brun)</text>
+            <circle cx="92" cy="56" r="3.5" fill="#3498db" stroke="#2980b9" stroke-width="0.8"/>
+            <text x="100" y="59" font-size="7.5" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">N (blå)</text>
+            <circle cx="142" cy="56" r="3.5" fill="#f1c40f" stroke="#27ae60" stroke-width="0.8"/>
+            <line x1="139" y1="53" x2="145" y2="59" stroke="#27ae60" stroke-width="1"/>
+            <text x="150" y="59" font-size="7.5" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">PE (gul/grön)</text>
+          </g>
+
+          <!-- Step connector line -->
+          <line x1="30" y1="318" x2="30" y2="332" stroke="#4f7560" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.5"/>
+
+          <!-- Step 5 -->
+          <g transform="translate(16, 334)">
+            <circle cx="14" cy="14" r="14" fill="url(#u345-stepCircle)"/>
+            <text x="14" y="18" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">5</text>
+            <text x="36" y="12" font-size="10" fill="#333" font-weight="700" font-family="'Segoe UI',system-ui,sans-serif">Montera och provkör</text>
+            <text x="36" y="24" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">Klicka fast dubbeluttaget i apparatdosan.</text>
+            <text x="36" y="34" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">Montera täckram. Anslut tänkt utrustning</text>
+            <text x="36" y="44" font-size="8" fill="#666" font-family="'Segoe UI',system-ui,sans-serif">och provkör.</text>
+          </g>
+
+          <!-- Info box at bottom -->
+          <rect x="12" y="386" width="306" height="8" rx="4" fill="#d6e8d9" opacity="0.6"/>
+        </g>
+
+        <!-- Divider line between left and right -->
+        <line x1="430" y1="20" x2="430" y2="400" stroke="#e3ddcc" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
+
+      </svg>
+    </div>
+
+    <!-- F1 — Framtidssäkring bakom panel (DETALJERAD VERSION) -->
+    <h3>F1 — Framtida uttag bakom akustikpanel</h3>
+    <div class="mockup-container" style="padding:16px;">
+      <svg viewBox="0 0 780 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:780px;height:auto;">
+        <defs>
+          <!-- Wood grain pattern for slats -->
+          <pattern id="f1-woodGrain" x="0" y="0" width="4" height="20" patternUnits="userSpaceOnUse">
+            <rect width="4" height="20" fill="#c8a872"/>
+            <line x1="0" y1="3" x2="4" y2="4" stroke="#b89a5a" stroke-width="0.3" opacity="0.5"/>
+            <line x1="0" y1="8" x2="4" y2="7" stroke="#b89a5a" stroke-width="0.4" opacity="0.4"/>
+            <line x1="0" y1="13" x2="4" y2="14.5" stroke="#b89a5a" stroke-width="0.3" opacity="0.45"/>
+            <line x1="0" y1="17" x2="4" y2="18" stroke="#be9e60" stroke-width="0.25" opacity="0.35"/>
+          </pattern>
+          <!-- Wood grain pattern rotated for cross-section battens -->
+          <pattern id="f1-woodGrainCross" x="0" y="0" width="20" height="4" patternUnits="userSpaceOnUse">
+            <rect width="20" height="4" fill="#c8a872"/>
+            <line x1="3" y1="0" x2="4" y2="4" stroke="#b89a5a" stroke-width="0.3" opacity="0.5"/>
+            <line x1="9" y1="0" x2="8" y2="4" stroke="#b89a5a" stroke-width="0.4" opacity="0.4"/>
+            <line x1="15" y1="0" x2="16" y2="4" stroke="#b89a5a" stroke-width="0.3" opacity="0.45"/>
+          </pattern>
+          <!-- Absorber crosshatch texture -->
+          <pattern id="f1-absorberTex" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+            <rect width="6" height="6" fill="#555"/>
+            <line x1="0" y1="0" x2="6" y2="6" stroke="#444" stroke-width="0.5" opacity="0.5"/>
+            <line x1="6" y1="0" x2="0" y2="6" stroke="#444" stroke-width="0.5" opacity="0.5"/>
+            <circle cx="3" cy="3" r="0.4" fill="#666" opacity="0.3"/>
+          </pattern>
+          <!-- Wall plaster texture -->
+          <pattern id="f1-wallTex" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+            <rect width="8" height="8" fill="#d5cfc0"/>
+            <circle cx="2" cy="2" r="0.5" fill="#ccc5b0" opacity="0.4"/>
+            <circle cx="6" cy="5" r="0.4" fill="#c8bfaa" opacity="0.35"/>
+            <circle cx="4" cy="7" r="0.3" fill="#ccc5b0" opacity="0.3"/>
+          </pattern>
+          <linearGradient id="f1-wallGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#c2b8a0"/><stop offset="100%" stop-color="#d5cfc0"/>
+          </linearGradient>
+          <linearGradient id="f1-slatGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#c8a872"/><stop offset="50%" stop-color="#d4b880"/><stop offset="100%" stop-color="#b89a5a"/>
+          </linearGradient>
+          <linearGradient id="f1-cableGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#e67e22"/><stop offset="100%" stop-color="#d35400"/>
+          </linearGradient>
+          <radialGradient id="f1-hueGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#f4e4c5" stop-opacity="0.9"/>
+            <stop offset="50%" stop-color="#f4e4c5" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#f4e4c5" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect x="0" y="0" width="780" height="420" fill="#f6f5f1" rx="6"/>
+
+        <!-- Column titles -->
+        <text x="175" y="20" text-anchor="middle" font-size="12" fill="#333" font-weight="700" letter-spacing="0.03em">SNITT GENOM PANELUPPBYGGNAD</text>
+        <text x="445" y="20" text-anchor="middle" font-size="12" fill="#333" font-weight="700" letter-spacing="0.03em">FRAMIFRÅN</text>
+        <text x="660" y="20" text-anchor="middle" font-size="11" fill="#4f7560" font-weight="700" letter-spacing="0.03em">ARBETSMOMENT</text>
+        <line x1="350" y1="26" x2="350" y2="410" stroke="#dcd6c8" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="510" y1="26" x2="510" y2="310" stroke="#dcd6c8" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- ============================== -->
+        <!-- LEFT: DETAILED CROSS-SECTION -->
+        <!-- ============================== -->
+
+        <!-- Wall with plaster texture -->
+        <rect x="18" y="34" width="60" height="330" fill="url(#f1-wallGrad)" stroke="#b0a890" stroke-width="1.5"/>
+        <rect x="18" y="34" width="60" height="330" fill="url(#f1-wallTex)" opacity="0.5"/>
+        <line x1="78" y1="34" x2="78" y2="364" stroke="#c2b8a0" stroke-width="2"/>
+        <text x="48" y="200" text-anchor="middle" font-size="9" fill="#888" transform="rotate(-90,48,200)" font-weight="600">VÄGG (puts/gips)</text>
+
+        <!-- Air gap -->
+        <rect x="78" y="34" width="10" height="330" fill="#eeeadf" stroke="none" opacity="0.6"/>
+        <line x1="78" y1="34" x2="78" y2="364" stroke="#ccc5b0" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <line x1="88" y1="34" x2="88" y2="364" stroke="#ccc5b0" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <text x="83" y="190" text-anchor="middle" font-size="5" fill="#aaa" transform="rotate(-90,83,190)">LUFT</text>
+
+        <!-- Sound absorber layer -->
+        <rect x="88" y="34" width="35" height="330" fill="url(#f1-absorberTex)" stroke="#444" stroke-width="1" opacity="0.4"/>
+        <rect x="88" y="34" width="35" height="330" fill="#555" stroke="#444" stroke-width="1" opacity="0.25"/>
+        <g opacity="0.15">
+          <circle cx="95" cy="60" r="1" fill="#888"/><circle cx="105" cy="80" r="0.8" fill="#777"/>
+          <circle cx="98" cy="120" r="1" fill="#888"/><circle cx="110" cy="140" r="0.8" fill="#777"/>
+          <circle cx="93" cy="180" r="1" fill="#888"/><circle cx="108" cy="210" r="0.8" fill="#777"/>
+          <circle cx="100" cy="250" r="1" fill="#888"/><circle cx="115" cy="280" r="0.8" fill="#777"/>
+          <circle cx="96" cy="320" r="1" fill="#888"/><circle cx="110" cy="340" r="0.8" fill="#777"/>
+        </g>
+        <text x="105" y="200" text-anchor="middle" font-size="7" fill="#ddd" transform="rotate(-90,105,200)" font-weight="600">ABSORBER (mineralull/skum)</text>
+
+        <!-- Horizontal mounting battens -->
+        <rect x="123" y="60" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="123" y="130" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="123" y="200" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="123" y="270" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="123" y="340" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="168" y="60" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="168" y="130" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="168" y="200" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="168" y="270" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="168" y="340" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="213" y="60" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="213" y="130" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="213" y="200" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="213" y="270" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="213" y="340" width="12" height="6" fill="url(#f1-woodGrainCross)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+
+        <!-- Vertical slats (cross-section with wood grain) -->
+        <rect x="123" y="34" width="15" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="1" rx="1"/>
+        <rect x="123" y="34" width="15" height="330" fill="url(#f1-woodGrain)" opacity="0.6"/>
+        <rect x="153" y="34" width="15" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="1" rx="1"/>
+        <rect x="153" y="34" width="15" height="330" fill="url(#f1-woodGrain)" opacity="0.6"/>
+        <rect x="183" y="34" width="15" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="1" rx="1"/>
+        <rect x="183" y="34" width="15" height="330" fill="url(#f1-woodGrain)" opacity="0.6"/>
+        <rect x="213" y="34" width="15" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="1" rx="1"/>
+        <rect x="213" y="34" width="15" height="330" fill="url(#f1-woodGrain)" opacity="0.6"/>
+        <rect x="243" y="34" width="15" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="1" rx="1"/>
+        <rect x="243" y="34" width="15" height="330" fill="url(#f1-woodGrain)" opacity="0.6"/>
+
+        <!-- Gap labels -->
+        <text x="145" y="378" text-anchor="middle" font-size="6" fill="#999">~15mm</text>
+        <text x="175" y="378" text-anchor="middle" font-size="6" fill="#e67e22" font-weight="600">KABELGAP</text>
+        <text x="205" y="378" text-anchor="middle" font-size="6" fill="#999">~15mm</text>
+        <text x="235" y="378" text-anchor="middle" font-size="6" fill="#999">~15mm</text>
+
+        <!-- Cable (EKK 3G1.5) in gap between slats 2 and 3 -->
+        <rect x="170" y="90" width="10" height="280" fill="url(#f1-cableGrad)" rx="4" opacity="0.85"/>
+        <line x1="172" y1="92" x2="172" y2="368" stroke="#f0a050" stroke-width="1" opacity="0.4"/>
+        <text x="175" y="392" text-anchor="middle" font-size="7" fill="#e67e22" font-weight="600">EKK 3G1.5</text>
+
+        <!-- Cable clamps (var 40 cm) -->
+        <rect x="138" y="140" width="32" height="4" fill="#bbb" stroke="#999" stroke-width="0.5" rx="1"/>
+        <rect x="138" y="220" width="32" height="4" fill="#bbb" stroke="#999" stroke-width="0.5" rx="1"/>
+        <rect x="138" y="300" width="32" height="4" fill="#bbb" stroke="#999" stroke-width="0.5" rx="1"/>
+        <line x1="170" y1="142" x2="232" y2="142" stroke="#aaa" stroke-width="0.5"/>
+        <text x="234" y="146" font-size="6" fill="#999">Kabelklämma var 40 cm</text>
+
+        <!-- Future outlet at top — green dashed -->
+        <rect x="96" y="50" width="38" height="50" fill="#e8e4d8" stroke="#2ecc71" stroke-width="2" rx="3" stroke-dasharray="5,3" opacity="0.9"/>
+        <circle cx="115" cy="70" r="10" fill="#fff" stroke="#555" stroke-width="1.2"/>
+        <circle cx="111" cy="66" r="1.5" fill="#666"/><circle cx="119" cy="66" r="1.5" fill="#666"/>
+        <circle cx="111" cy="74" r="1.5" fill="#666"/><circle cx="119" cy="74" r="1.5" fill="#666"/>
+        <line x1="108" y1="60" x2="108" y2="80" stroke="#999" stroke-width="0.8"/>
+        <line x1="122" y1="60" x2="122" y2="80" stroke="#999" stroke-width="0.8"/>
+        <text x="115" y="93" text-anchor="middle" font-size="6" fill="#27ae60" font-weight="600">FRAMTIDA</text>
+
+        <!-- Cable end — capped, taped, with extra coil -->
+        <rect x="170" y="84" width="10" height="12" fill="#e67e22" rx="2"/>
+        <rect x="168" y="82" width="14" height="5" fill="#333" rx="1" opacity="0.7"/>
+        <rect x="167" y="80" width="16" height="3" fill="#e74c3c" rx="1" opacity="0.5"/>
+        <path d="M175,84 Q185,75 178,68 Q170,60 178,55 Q185,50 175,45" fill="none" stroke="#e67e22" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+
+        <!-- Cable end note -->
+        <line x1="186" y1="62" x2="248" y2="46" stroke="#c0392b" stroke-width="0.8"/>
+        <rect x="248" y="35" width="96" height="24" fill="#fff3e0" stroke="#e67e22" stroke-width="0.8" rx="3"/>
+        <text x="296" y="46" text-anchor="middle" font-size="6.5" fill="#c0392b" font-weight="600">Kabelände tejpad</text>
+        <text x="296" y="55" text-anchor="middle" font-size="6.5" fill="#c0392b">Lämna ~30 cm marginal</text>
+
+        <!-- F1 badge -->
+        <line x1="96" y1="65" x2="60" y2="46" stroke="#2ecc71" stroke-width="0.8"/>
+        <rect x="8" y="36" width="52" height="16" fill="#2ecc71" rx="3"/>
+        <text x="34" y="48" text-anchor="middle" font-size="7.5" fill="#fff" font-weight="700">F1 — LAMPA</text>
+
+        <!-- Apparatdosa -->
+        <rect x="80" y="48" width="16" height="54" fill="#e0ddd0" stroke="#999" stroke-width="1" rx="2"/>
+        <text x="88" y="118" text-anchor="middle" font-size="5.5" fill="#777">Dosa</text>
+
+        <!-- Tape label on cable -->
+        <rect x="165" y="330" width="20" height="8" fill="#f7dc6f" stroke="#d4ac0d" stroke-width="0.5" rx="1"/>
+        <text x="175" y="337" text-anchor="middle" font-size="4" fill="#7a5a1c" font-weight="600">F1</text>
+
+        <!-- Dimension lines -->
+        <line x1="18" y1="395" x2="78" y2="395" stroke="#888" stroke-width="0.8"/>
+        <line x1="18" y1="390" x2="18" y2="400" stroke="#888" stroke-width="0.8"/>
+        <line x1="78" y1="390" x2="78" y2="400" stroke="#888" stroke-width="0.8"/>
+        <text x="48" y="405" text-anchor="middle" font-size="6.5" fill="#888">60 mm</text>
+        <line x1="78" y1="395" x2="88" y2="395" stroke="#888" stroke-width="0.8"/>
+        <line x1="88" y1="390" x2="88" y2="400" stroke="#888" stroke-width="0.8"/>
+        <text x="83" y="405" text-anchor="middle" font-size="5" fill="#888">10</text>
+        <line x1="88" y1="395" x2="123" y2="395" stroke="#888" stroke-width="0.8"/>
+        <line x1="123" y1="390" x2="123" y2="400" stroke="#888" stroke-width="0.8"/>
+        <text x="105" y="405" text-anchor="middle" font-size="6.5" fill="#888">35 mm</text>
+        <line x1="123" y1="395" x2="258" y2="395" stroke="#888" stroke-width="0.8"/>
+        <line x1="258" y1="390" x2="258" y2="400" stroke="#888" stroke-width="0.8"/>
+        <text x="190" y="405" text-anchor="middle" font-size="6.5" fill="#888">Ribbor 15 mm + gap 15 mm</text>
+
+        <!-- Direction arrows -->
+        <text x="18" y="30" font-size="7" fill="#999" font-weight="600">V</text>
+        <text x="256" y="30" font-size="7" fill="#999" font-weight="600" text-anchor="end">RUM</text>
+        <line x1="24" y1="28" x2="248" y2="28" stroke="#ccc" stroke-width="0.5"/>
+        <polygon points="248,26 254,28 248,30" fill="#ccc"/>
+
+        <!-- ============================== -->
+        <!-- CENTER: FRONT VIEW -->
+        <!-- ============================== -->
+        <rect x="358" y="34" width="144" height="330" fill="#e8e0d0" stroke="#b0a890" stroke-width="1" rx="2" opacity="0.3"/>
+
+        <!-- Slats with wood grain (front view) -->
+        <rect x="358" y="34" width="16" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="358" y="34" width="16" height="330" fill="url(#f1-woodGrain)" opacity="0.5"/>
+        <rect x="382" y="34" width="16" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="382" y="34" width="16" height="330" fill="url(#f1-woodGrain)" opacity="0.5"/>
+        <rect x="406" y="34" width="16" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="406" y="34" width="16" height="330" fill="url(#f1-woodGrain)" opacity="0.5"/>
+        <rect x="430" y="34" width="16" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="430" y="34" width="16" height="330" fill="url(#f1-woodGrain)" opacity="0.5"/>
+        <rect x="454" y="34" width="16" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="454" y="34" width="16" height="330" fill="url(#f1-woodGrain)" opacity="0.5"/>
+        <rect x="478" y="34" width="16" height="330" fill="url(#f1-slatGrad)" stroke="#a8884a" stroke-width="0.8" rx="1"/>
+        <rect x="478" y="34" width="16" height="330" fill="url(#f1-woodGrain)" opacity="0.5"/>
+
+        <!-- Cable barely visible in gap -->
+        <line x1="423" y1="100" x2="423" y2="364" stroke="#e67e22" stroke-width="1.5" opacity="0.25"/>
+
+        <!-- Future outlet — dashed green circle -->
+        <circle cx="423" cy="85" r="14" fill="none" stroke="#2ecc71" stroke-width="2" stroke-dasharray="4,3"/>
+        <text x="423" y="89" text-anchor="middle" font-size="8" fill="#2ecc71" font-weight="700">F1</text>
+        <line x1="423" y1="99" x2="423" y2="105" stroke="#2ecc71" stroke-width="1" stroke-dasharray="2,2"/>
+
+        <!-- Philips Hue lamp warm glow -->
+        <circle cx="423" cy="52" r="22" fill="url(#f1-hueGlow)"/>
+        <circle cx="423" cy="52" r="12" fill="#f4e4c5" stroke="#e8c878" stroke-width="1.5" opacity="0.8"/>
+        <text x="423" y="49" text-anchor="middle" font-size="6" fill="#7a5a1c" font-weight="700">PHILIPS</text>
+        <text x="423" y="57" text-anchor="middle" font-size="7" fill="#7a5a1c" font-weight="700">HUE</text>
+        <line x1="423" y1="64" x2="423" y2="71" stroke="#f4e4c5" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+        <!-- Gap dimension -->
+        <line x1="398" y1="374" x2="406" y2="374" stroke="#aaa" stroke-width="0.5"/>
+        <line x1="430" y1="374" x2="422" y2="374" stroke="#aaa" stroke-width="0.5"/>
+        <text x="414" y="378" text-anchor="middle" font-size="5.5" fill="#999">~15 mm</text>
+
+        <!-- Countertop -->
+        <rect x="358" y="362" width="144" height="6" fill="#a8b5bf" stroke="#8a9baa" stroke-width="0.8"/>
+        <text x="430" y="386" text-anchor="middle" font-size="6" fill="#999">Bänkskiva</text>
+        <text x="430" y="396" text-anchor="middle" font-size="6" fill="#999">Kabel knappt synlig i gap</text>
+
+        <!-- ============================== -->
+        <!-- RIGHT: STEP-BY-STEP -->
+        <!-- ============================== -->
+
+        <!-- Step 1 -->
+        <circle cx="527" cy="42" r="10" fill="#4f7560"/>
+        <text x="527" y="46" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
+        <text x="543" y="40" font-size="8.5" fill="#333" font-weight="700">Dra kabel genom ribborna</text>
+        <text x="543" y="52" font-size="7" fill="#555">Innan akustikpanelen monteras:</text>
+        <text x="543" y="62" font-size="7" fill="#555">planera kabelvägen vertikalt</text>
+        <text x="543" y="72" font-size="7" fill="#555">mellan två ribbor. Dra EKK 3G1.5</text>
+        <text x="543" y="82" font-size="7" fill="#555">från genomföring i bänkskivan</text>
+        <text x="543" y="92" font-size="7" fill="#555">uppåt till önskad lamphöjd.</text>
+        <text x="543" y="104" font-size="6.5" fill="#888">Fäst kabeln med kabelklämmor</text>
+        <text x="543" y="114" font-size="6.5" fill="#888">mot absorbern var 40 cm.</text>
+
+        <line x1="520" y1="124" x2="770" y2="124" stroke="#dcd6c8" stroke-width="0.8"/>
+
+        <!-- Step 2 -->
+        <circle cx="527" cy="140" r="10" fill="#4f7560"/>
+        <text x="527" y="144" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">2</text>
+        <text x="543" y="138" font-size="8.5" fill="#333" font-weight="700">Lämna kabelände med marginal</text>
+        <text x="543" y="150" font-size="7" fill="#555">Kapa kabeln med ~30 cm extra</text>
+        <text x="543" y="160" font-size="7" fill="#555">längd vid tänkt uttagsposition.</text>
+        <text x="543" y="172" font-size="7" fill="#c0392b" font-weight="600">Avmantle INTE änden.</text>
+        <text x="543" y="184" font-size="7" fill="#555">Tejpa ihop ledarna och fäst</text>
+        <text x="543" y="194" font-size="7" fill="#555">kabeländen mot absorbern.</text>
+        <text x="543" y="206" font-size="6.5" fill="#888">Märk med "F1 — LAMPA"</text>
+        <text x="543" y="216" font-size="6.5" fill="#888">på kabeltejpen.</text>
+
+        <!-- Mini cable end illustration -->
+        <rect x="728" y="158" width="8" height="30" fill="#e67e22" rx="3"/>
+        <rect x="726" y="155" width="12" height="5" fill="#333" rx="1" opacity="0.7"/>
+        <rect x="725" y="152" width="14" height="4" fill="#e74c3c" rx="1" opacity="0.5"/>
+        <rect x="722" y="182" width="20" height="7" fill="#f7dc6f" stroke="#d4ac0d" stroke-width="0.5" rx="1"/>
+        <text x="732" y="188" text-anchor="middle" font-size="4" fill="#7a5a1c" font-weight="600">F1</text>
+
+        <line x1="520" y1="228" x2="770" y2="228" stroke="#dcd6c8" stroke-width="0.8"/>
+
+        <!-- Step 3 -->
+        <circle cx="527" cy="244" r="10" fill="#4f7560"/>
+        <text x="527" y="248" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">3</text>
+        <text x="543" y="242" font-size="8.5" fill="#333" font-weight="700">Montera uttag vid lampval</text>
+        <text x="543" y="254" font-size="7" fill="#555">När lampmodell är bestämd:</text>
+        <text x="543" y="264" font-size="7" fill="#555">bestäm exakt position utifrån</text>
+        <text x="543" y="274" font-size="7" fill="#555">lampans fästpunkt. Montera</text>
+        <text x="543" y="284" font-size="7" fill="#555">utanpåliggande apparatdosa</text>
+        <text x="543" y="294" font-size="7" fill="#555">på vägg/absorber bakom</text>
+        <text x="543" y="304" font-size="7" fill="#555">ribborna. Anslut och montera</text>
+        <text x="543" y="314" font-size="7" fill="#555">enkeluttag. Anslut lampan.</text>
+
+        <!-- Mini socket illustration -->
+        <rect x="725" y="260" width="26" height="34" fill="#e8e4d8" stroke="#27ae60" stroke-width="1.5" rx="2" stroke-dasharray="4,2"/>
+        <circle cx="738" cy="275" r="8" fill="#fff" stroke="#555" stroke-width="1"/>
+        <circle cx="735" cy="272" r="1.2" fill="#666"/><circle cx="741" cy="272" r="1.2" fill="#666"/>
+        <circle cx="735" cy="278" r="1.2" fill="#666"/><circle cx="741" cy="278" r="1.2" fill="#666"/>
+        <text x="738" y="300" text-anchor="middle" font-size="5" fill="#27ae60" font-weight="600">SENARE</text>
+
+        <!-- Step connectors -->
+        <line x1="527" y1="52" x2="527" y2="130" stroke="#4f7560" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="527" y1="150" x2="527" y2="234" stroke="#4f7560" stroke-width="1" stroke-dasharray="2,2"/>
+
+        <!-- ============================== -->
+        <!-- INFO BOX -->
+        <!-- ============================== -->
+        <rect x="518" y="335" width="254" height="50" fill="#f4e4c5" stroke="#d4a843" stroke-width="1" rx="5"/>
+        <circle cx="534" cy="352" r="7" fill="#f7dc6f" stroke="#d4a843" stroke-width="1"/>
+        <text x="534" y="356" text-anchor="middle" font-size="9" fill="#7a5a1c">!</text>
+        <text x="548" y="350" font-size="8" fill="#7a5a1c" font-weight="700">Framtidssäkring</text>
+        <text x="548" y="362" font-size="7" fill="#7a5a1c">Kabeln dras under byggnation för att slippa</text>
+        <text x="548" y="373" font-size="7" fill="#7a5a1c">demontera akustikpanelen senare.</text>
+
+        <text x="390" y="415" text-anchor="middle" font-size="6" fill="#ccc">F1 — Framtida uttag bakom akustikpanel (Philips Hue lampa)</text>
+      </svg>
+    </div>
+
+    <!-- G — Genomföring bänkskiva (DETAILED) -->
+    <h3>G — Genomföring i bänkskiva</h3>
+    <div class="mockup-container" style="padding:16px;">
+      <svg viewBox="0 0 780 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:780px;height:auto;">
+        <defs>
+          <!-- MDF cross-section pattern -->
+          <pattern id="g-mdfGrain" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+            <rect width="4" height="4" fill="#a8b5bf"/>
+            <line x1="0" y1="1" x2="4" y2="1" stroke="#9eacb7" stroke-width="0.3" opacity="0.5"/>
+            <line x1="0" y1="3" x2="4" y2="3" stroke="#b2bfc9" stroke-width="0.2" opacity="0.4"/>
+          </pattern>
+          <!-- Countertop depth gradient -->
+          <linearGradient id="g-mdfTopGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#b5c2cc"/>
+            <stop offset="30%" stop-color="#a8b5bf"/>
+            <stop offset="100%" stop-color="#8a9baa"/>
+          </linearGradient>
+          <!-- Rubber grommet radial -->
+          <radialGradient id="g-rubberRadial" cx="50%" cy="40%" r="55%">
+            <stop offset="0%" stop-color="#666"/>
+            <stop offset="50%" stop-color="#444"/>
+            <stop offset="100%" stop-color="#2a2a2a"/>
+          </radialGradient>
+          <!-- HDMI cable gradient -->
+          <linearGradient id="g-hdmiGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a2a3e"/>
+            <stop offset="100%" stop-color="#1a1a2e"/>
+          </linearGradient>
+          <!-- Cabinet zone gradient -->
+          <linearGradient id="g-cabinetGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c2cdd6"/>
+            <stop offset="100%" stop-color="#b0bcc7"/>
+          </linearGradient>
+          <!-- Step circle gradient -->
+          <linearGradient id="g-stepGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#5d8a6e"/>
+            <stop offset="100%" stop-color="#3d6350"/>
+          </linearGradient>
+          <!-- Grommet cross-section fill -->
+          <linearGradient id="g-gromXGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#555"/>
+            <stop offset="100%" stop-color="#333"/>
+          </linearGradient>
+          <!-- Drop shadow filters -->
+          <filter id="g-dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#00000030"/>
+          </filter>
+          <filter id="g-softShadow" x="-5%" y="-5%" width="115%" height="115%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#00000020"/>
+          </filter>
+        </defs>
+
+        <!-- Background -->
+        <rect x="0" y="0" width="780" height="420" fill="#f6f5f1" rx="6"/>
+
+        <!-- Title -->
+        <text x="390" y="20" text-anchor="middle" font-size="14" fill="#333" font-weight="700" letter-spacing="0.02em">G — Genomföring i bänkskiva (kabelgenomföring)</text>
+
+        <!-- ============================================================ -->
+        <!-- LEFT SIDE — EXPLODED VIEW + INSTALLED CROSS-SECTION (~50%)   -->
+        <!-- ============================================================ -->
+
+        <!-- Section label: Exploded view -->
+        <text x="170" y="42" text-anchor="middle" font-size="10" fill="#8e44ad" font-weight="600" letter-spacing="0.04em">SPRÄNGSKISS</text>
+
+        <!-- === UPPER: EXPLODED VIEW === -->
+
+        <!-- Floating rubber grommet (exploded, above hole) -->
+        <g filter="url(#g-dropShadow)">
+          <!-- Grommet outer body - top view with 3D feel -->
+          <ellipse cx="170" cy="72" rx="38" ry="14" fill="url(#g-rubberRadial)" stroke="#222" stroke-width="1"/>
+          <!-- Inner opening -->
+          <ellipse cx="170" cy="72" rx="22" ry="8" fill="#444" stroke="#333" stroke-width="0.8"/>
+          <!-- Slit opening for cables -->
+          <rect x="168" y="58" width="4" height="14" fill="#444" stroke="#333" stroke-width="0.5" rx="1"/>
+          <!-- Highlight ring -->
+          <ellipse cx="170" cy="69" rx="30" ry="10" fill="none" stroke="#77777740" stroke-width="1"/>
+          <!-- Surface texture lines -->
+          <ellipse cx="170" cy="72" rx="34" ry="12" fill="none" stroke="#55555530" stroke-width="0.5"/>
+        </g>
+
+        <!-- Label: Gummigenomföring -->
+        <line x1="210" y1="68" x2="240" y2="55" stroke="#8e44ad" stroke-width="0.8"/>
+        <text x="242" y="52" font-size="9" fill="#8e44ad" font-weight="600">Gummigenomföring</text>
+        <text x="242" y="63" font-size="8" fill="#888">Gummi med U-profil</text>
+
+        <!-- Downward installation arrow -->
+        <line x1="170" y1="88" x2="170" y2="108" stroke="#8e44ad" stroke-width="1.5"/>
+        <polygon points="165,108 175,108 170,116" fill="#8e44ad"/>
+        <text x="185" y="102" font-size="7" fill="#8e44ad" font-style="italic">Tryck ner</text>
+
+        <!-- Countertop piece in exploded view (cross-section) -->
+        <rect x="100" y="120" width="140" height="22" fill="url(#g-mdfGrain)" stroke="#8a9baa" stroke-width="1.5" rx="1"/>
+        <!-- Top surface highlight -->
+        <rect x="100" y="120" width="140" height="3" fill="#bcc8d1" opacity="0.6" rx="1"/>
+        <!-- Hole in countertop -->
+        <rect x="145" y="120" width="50" height="22" fill="#f6f5f1" stroke="#8a9baa" stroke-width="1.5"/>
+        <!-- MDF edge detail -->
+        <line x1="145" y1="121" x2="145" y2="141" stroke="#7a8b99" stroke-width="0.5"/>
+        <line x1="195" y1="121" x2="195" y2="141" stroke="#7a8b99" stroke-width="0.5"/>
+        <text x="95" y="135" text-anchor="end" font-size="8" fill="#5b5d5c">MDF 22 mm</text>
+
+        <!-- Dimension: hole diameter -->
+        <line x1="145" y1="150" x2="195" y2="150" stroke="#666" stroke-width="0.7"/>
+        <line x1="145" y1="146" x2="145" y2="154" stroke="#666" stroke-width="0.7"/>
+        <line x1="195" y1="146" x2="195" y2="154" stroke="#666" stroke-width="0.7"/>
+        <text x="170" y="160" text-anchor="middle" font-size="7" fill="#666">60 mm</text>
+
+        <!-- Dimension: countertop thickness -->
+        <line x1="248" y1="120" x2="248" y2="142" stroke="#666" stroke-width="0.7"/>
+        <line x1="244" y1="120" x2="252" y2="120" stroke="#666" stroke-width="0.7"/>
+        <line x1="244" y1="142" x2="252" y2="142" stroke="#666" stroke-width="0.7"/>
+        <text x="260" y="134" font-size="7" fill="#666">22 mm</text>
+
+        <!-- Divider line -->
+        <line x1="30" y1="172" x2="335" y2="172" stroke="#dcd6c8" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <text x="185" y="183" text-anchor="middle" font-size="8" fill="#999" font-style="italic">Monterat tvärsnitt</text>
+
+        <!-- === LOWER: INSTALLED CROSS-SECTION VIEW === -->
+
+        <!-- Zone above: Akustikpanel / TV-zon -->
+        <rect x="50" y="192" width="270" height="48" fill="#c8a87220" stroke="#b8935a" stroke-width="0.8" stroke-dasharray="4,3" rx="2"/>
+        <!-- Ribbon hints -->
+        <line x1="70" y1="196" x2="70" y2="236" stroke="#c8a872" stroke-width="0.6" opacity="0.35"/>
+        <line x1="85" y1="196" x2="85" y2="236" stroke="#c8a872" stroke-width="0.6" opacity="0.35"/>
+        <line x1="100" y1="196" x2="100" y2="236" stroke="#c8a872" stroke-width="0.6" opacity="0.35"/>
+        <line x1="260" y1="196" x2="260" y2="236" stroke="#c8a872" stroke-width="0.6" opacity="0.35"/>
+        <line x1="275" y1="196" x2="275" y2="236" stroke="#c8a872" stroke-width="0.6" opacity="0.35"/>
+        <line x1="290" y1="196" x2="290" y2="236" stroke="#c8a872" stroke-width="0.6" opacity="0.35"/>
+        <text x="185" y="218" text-anchor="middle" font-size="10" fill="#8a6d3b" font-weight="500">Akustikpanel / TV-zon</text>
+
+        <!-- Cables coming from above -->
+        <line x1="155" y1="236" x2="155" y2="244" stroke="#e67e22" stroke-width="3" stroke-linecap="round"/>
+        <line x1="175" y1="236" x2="175" y2="244" stroke="url(#g-hdmiGrad)" stroke-width="4" stroke-linecap="round"/>
+        <line x1="195" y1="236" x2="195" y2="244" stroke="#2980b9" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Countertop with grommet INSTALLED (cross-section view) -->
+        <!-- Left MDF portion -->
+        <rect x="50" y="244" width="95" height="22" fill="url(#g-mdfGrain)" stroke="#8a9baa" stroke-width="1.5"/>
+        <rect x="50" y="244" width="95" height="3" fill="#bcc8d1" opacity="0.5"/>
+        <!-- Right MDF portion -->
+        <rect x="225" y="244" width="95" height="22" fill="url(#g-mdfGrain)" stroke="#8a9baa" stroke-width="1.5"/>
+        <rect x="225" y="244" width="95" height="3" fill="#bcc8d1" opacity="0.5"/>
+
+        <!-- Grommet in hole — U-channel cross-section (left side) -->
+        <!-- Left grommet U-channel -->
+        <path d="M145,242 L145,268 L150,268 L150,246 L145,242 Z" fill="url(#g-gromXGrad)" stroke="#222" stroke-width="0.8"/>
+        <!-- U-channel lip top-left -->
+        <path d="M140,243 L145,243 L145,246 L140,246 Z" fill="#444" stroke="#222" stroke-width="0.5"/>
+        <!-- U-channel lip bottom-left -->
+        <path d="M140,264 L145,264 L145,268 L140,268 Z" fill="#444" stroke="#222" stroke-width="0.5"/>
+
+        <!-- Right grommet U-channel -->
+        <path d="M220,242 L220,268 L215,268 L215,246 L220,242 Z" fill="url(#g-gromXGrad)" stroke="#222" stroke-width="0.8"/>
+        <!-- U-channel lip top-right -->
+        <path d="M220,243 L225,243 L225,246 L220,246 Z" fill="#444" stroke="#222" stroke-width="0.5"/>
+        <!-- U-channel lip bottom-right -->
+        <path d="M220,264 L225,264 L225,268 L220,268 Z" fill="#444" stroke="#222" stroke-width="0.5"/>
+
+        <!-- U-channel detail label -->
+        <line x1="140" y1="258" x2="120" y2="273" stroke="#555" stroke-width="0.6"/>
+        <text x="65" y="277" font-size="7" fill="#555" font-weight="500">U-profil griper MDF-kanten</text>
+
+        <!-- Cables passing through the installed grommet -->
+        <!-- Power cable (orange) -->
+        <line x1="155" y1="244" x2="155" y2="300" stroke="#e67e22" stroke-width="3" stroke-linecap="round"/>
+        <!-- HDMI cable (dark, thicker) -->
+        <line x1="175" y1="244" x2="175" y2="300" stroke="url(#g-hdmiGrad)" stroke-width="4" stroke-linecap="round"/>
+        <!-- Audio cable (blue) -->
+        <line x1="195" y1="244" x2="195" y2="300" stroke="#2980b9" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Cable labels with leader lines -->
+        <line x1="155" y1="290" x2="115" y2="305" stroke="#e67e22" stroke-width="0.6"/>
+        <text x="67" y="309" font-size="8" fill="#e67e22" font-weight="600">Strömkabel</text>
+
+        <line x1="175" y1="295" x2="175" y2="312" stroke="#1a1a2e" stroke-width="0.6"/>
+        <text x="175" y="322" text-anchor="middle" font-size="8" fill="#1a1a2e" font-weight="600">HDMI 2.1</text>
+
+        <line x1="195" y1="290" x2="235" y2="305" stroke="#2980b9" stroke-width="0.6"/>
+        <text x="235" y="309" font-size="8" fill="#2980b9" font-weight="600">Ljudkabel</text>
+
+        <!-- Zone below: Underskåp -->
+        <rect x="50" y="266" width="270" height="60" fill="url(#g-cabinetGrad)" stroke="#8a9baa" stroke-width="0.8" rx="2" opacity="0.35"/>
+        <text x="185" y="340" text-anchor="middle" font-size="9" fill="#5b5d5c">Underskåp (mediautrustning)</text>
+
+        <!-- ============================================================ -->
+        <!-- CENTER — TOP-DOWN VIEW (Ovanifrån) (~15%)                    -->
+        <!-- ============================================================ -->
+
+        <g transform="translate(355, 38)">
+          <text x="40" y="8" text-anchor="middle" font-size="9" fill="#8e44ad" font-weight="600" letter-spacing="0.04em">OVANIFRÅN</text>
+
+          <!-- Countertop surface piece -->
+          <rect x="0" y="16" width="80" height="90" fill="url(#g-mdfTopGrad)" stroke="#8a9baa" stroke-width="1" rx="2" filter="url(#g-softShadow)"/>
+          <!-- Surface grain lines -->
+          <line x1="5" y1="30" x2="75" y2="30" stroke="#9eacb750" stroke-width="0.3"/>
+          <line x1="5" y1="45" x2="75" y2="45" stroke="#9eacb750" stroke-width="0.3"/>
+          <line x1="5" y1="60" x2="75" y2="60" stroke="#9eacb750" stroke-width="0.3"/>
+          <line x1="5" y1="75" x2="75" y2="75" stroke="#9eacb750" stroke-width="0.3"/>
+          <line x1="5" y1="90" x2="75" y2="90" stroke="#9eacb750" stroke-width="0.3"/>
+
+          <!-- Edge labels -->
+          <text x="40" y="112" text-anchor="middle" font-size="6" fill="#999">Framsida</text>
+          <text x="40" y="14" text-anchor="middle" font-size="6" fill="#999">Bakkant (mot vägg)</text>
+
+          <!-- Grommet ring from above -->
+          <circle cx="40" cy="44" r="22" fill="#f6f5f1" stroke="#8a9baa" stroke-width="0.8"/>
+          <circle cx="40" cy="44" r="22" fill="none" stroke="url(#g-rubberRadial)" stroke-width="5"/>
+          <circle cx="40" cy="44" r="19" fill="none" stroke="#55555540" stroke-width="0.5"/>
+
+          <!-- Slit in grommet (toward back/wall) -->
+          <rect x="38" y="20" width="4" height="6" fill="#555" stroke="#333" stroke-width="0.3" rx="0.5"/>
+
+          <!-- Cables visible from above (inside grommet opening) -->
+          <circle cx="33" cy="42" r="3" fill="#e67e22" stroke="#d35400" stroke-width="0.5"/>
+          <circle cx="42" cy="40" r="4" fill="#1a1a2e" stroke="#111" stroke-width="0.5"/>
+          <circle cx="48" cy="47" r="2.5" fill="#2980b9" stroke="#2471a3" stroke-width="0.5"/>
+
+          <!-- Cable labels -->
+          <text x="18" y="50" text-anchor="end" font-size="5" fill="#e67e22">Ström</text>
+          <text x="42" y="52" text-anchor="middle" font-size="5" fill="#1a1a2e">HDMI</text>
+          <text x="62" y="52" font-size="5" fill="#2980b9">Ljud</text>
+
+          <!-- Diameter dimension -->
+          <line x1="18" y1="74" x2="62" y2="74" stroke="#666" stroke-width="0.5"/>
+          <line x1="18" y1="71" x2="18" y2="77" stroke="#666" stroke-width="0.5"/>
+          <line x1="62" y1="71" x2="62" y2="77" stroke="#666" stroke-width="0.5"/>
+          <text x="40" y="83" text-anchor="middle" font-size="6" fill="#666">∅ 60 mm</text>
+
+          <!-- Distance from back edge -->
+          <line x1="68" y1="18" x2="68" y2="44" stroke="#c0392b" stroke-width="0.5"/>
+          <line x1="65" y1="18" x2="71" y2="18" stroke="#c0392b" stroke-width="0.5"/>
+          <line x1="65" y1="44" x2="71" y2="44" stroke="#c0392b" stroke-width="0.5"/>
+          <text x="76" y="34" font-size="5" fill="#c0392b">~50 mm</text>
+        </g>
+
+        <!-- ============================================================ -->
+        <!-- RIGHT SIDE — STEP-BY-STEP PANEL (~35%)                       -->
+        <!-- ============================================================ -->
+
+        <rect x="490" y="30" width="275" height="300" fill="#faf8f1" stroke="#e3ddcc" stroke-width="1" rx="6" filter="url(#g-softShadow)"/>
+        <text x="627" y="52" text-anchor="middle" font-size="11" fill="#333" font-weight="700" letter-spacing="0.03em">Monteringssteg</text>
+        <line x1="510" y1="58" x2="745" y2="58" stroke="#e3ddcc" stroke-width="0.8"/>
+
+        <!-- Step 1 -->
+        <circle cx="518" cy="80" r="11" fill="url(#g-stepGrad)" stroke="#3d6350" stroke-width="1"/>
+        <text x="518" y="84" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">1</text>
+        <text x="535" y="76" font-size="9" fill="#333" font-weight="700">Borra genomföringshål</text>
+        <text x="535" y="88" font-size="7.5" fill="#666">Markera hålcentrum på bänkskivan,</text>
+        <text x="535" y="99" font-size="7.5" fill="#666">nära bakkanten (~5 cm från bakre</text>
+        <text x="535" y="110" font-size="7.5" fill="#666">kanten). Borra med hålsåg ∅60 mm.</text>
+        <text x="535" y="121" font-size="7.5" fill="#666">Slipa kanten jämn.</text>
+
+        <!-- Mini illustration: hole saw -->
+        <circle cx="730" cy="95" r="14" fill="none" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <circle cx="730" cy="95" r="2" fill="#8e44ad"/>
+        <text x="730" y="116" text-anchor="middle" font-size="6" fill="#8e44ad">∅60</text>
+
+        <!-- Step 2 -->
+        <circle cx="518" cy="150" r="11" fill="url(#g-stepGrad)" stroke="#3d6350" stroke-width="1"/>
+        <text x="518" y="154" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">2</text>
+        <text x="535" y="146" font-size="9" fill="#333" font-weight="700">Montera gummigenomföring</text>
+        <text x="535" y="158" font-size="7.5" fill="#666">Tryck in gummigenomföringen i</text>
+        <text x="535" y="169" font-size="7.5" fill="#666">hålet. Gummit har en U-profil som</text>
+        <text x="535" y="180" font-size="7.5" fill="#666">griper om MDF-kanten. Kontrollera</text>
+        <text x="535" y="191" font-size="7.5" fill="#666">att slitsen riktas bakåt (mot vägg).</text>
+
+        <!-- Mini illustration: U-profile grommet -->
+        <g transform="translate(716, 155)">
+          <rect x="0" y="0" width="20" height="16" fill="#a8b5bf" stroke="#8a9baa" stroke-width="0.8" rx="1"/>
+          <path d="M2,-2 L2,18 L5,18 L5,2 L15,2 L15,18 L18,18 L18,-2 Z" fill="#444" stroke="#333" stroke-width="0.5"/>
+          <text x="10" y="30" text-anchor="middle" font-size="5" fill="#555">U-profil</text>
+        </g>
+
+        <!-- Step 3 -->
+        <circle cx="518" cy="226" r="11" fill="url(#g-stepGrad)" stroke="#3d6350" stroke-width="1"/>
+        <text x="518" y="230" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">3</text>
+        <text x="535" y="222" font-size="9" fill="#333" font-weight="700">Dra kablar</text>
+        <text x="535" y="234" font-size="7.5" fill="#666">Dra HDMI, ström och ljudkablar</text>
+        <text x="535" y="245" font-size="7.5" fill="#666">genom genomföringen. Lämna</text>
+        <text x="535" y="256" font-size="7.5" fill="#666">tillräcklig längd i underskåpet</text>
+        <text x="535" y="267" font-size="7.5" fill="#666">för anslutning. Undvik skarp böj</text>
+        <text x="535" y="278" font-size="7.5" fill="#666">av HDMI — minsta böjradie 30 mm.</text>
+
+        <!-- Mini illustration: cables through -->
+        <g transform="translate(720, 238)">
+          <line x1="5" y1="0" x2="5" y2="24" stroke="#e67e22" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="0" x2="12" y2="24" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+          <line x1="19" y1="0" x2="19" y2="24" stroke="#2980b9" stroke-width="1.8" stroke-linecap="round"/>
+        </g>
+
+        <!-- Warning box for HDMI bend radius -->
+        <rect x="510" y="290" width="240" height="30" fill="#fdf2e9" stroke="#e67e22" stroke-width="0.8" rx="4"/>
+        <text x="520" y="305" font-size="7" fill="#d35400" font-weight="600">! Minsta böjradie HDMI: 30 mm</text>
+        <text x="520" y="315" font-size="7" fill="#d35400">  Undvik skarp vinkel vid genomföringen</text>
+
+        <!-- ============================================================ -->
+        <!-- BOTTOM SECTION — Countertop strip with G-marks               -->
+        <!-- ============================================================ -->
+
+        <line x1="20" y1="350" x2="760" y2="350" stroke="#dcd6c8" stroke-width="0.8"/>
+        <text x="390" y="366" text-anchor="middle" font-size="10" fill="#333" font-weight="600">Placering i bänkskiva — ovanifrån</text>
+
+        <!-- Simplified top-view countertop strip -->
+        <rect x="60" y="374" width="660" height="26" fill="url(#g-mdfTopGrad)" stroke="#8a9baa" stroke-width="1" rx="3"/>
+        <!-- Section dividers -->
+        <line x1="225" y1="374" x2="225" y2="400" stroke="#8a9baa" stroke-width="0.8" stroke-dasharray="3,2"/>
+        <line x1="390" y1="374" x2="390" y2="400" stroke="#8a9baa" stroke-width="0.8" stroke-dasharray="3,2"/>
+        <line x1="555" y1="374" x2="555" y2="400" stroke="#8a9baa" stroke-width="0.8" stroke-dasharray="3,2"/>
+
+        <!-- Section labels along bottom -->
+        <text x="142" y="416" text-anchor="middle" font-size="7" fill="#999">Lådsektion V</text>
+        <text x="307" y="416" text-anchor="middle" font-size="7" fill="#999">Mittenskåp V</text>
+        <text x="472" y="416" text-anchor="middle" font-size="7" fill="#999">Mittenskåp H</text>
+        <text x="607" y="416" text-anchor="middle" font-size="7" fill="#999">Lådsektion H</text>
+
+        <!-- G1 mark -->
+        <circle cx="307" cy="387" r="8" fill="#9b59b6" stroke="#8e44ad" stroke-width="1.5"/>
+        <text x="307" y="390" text-anchor="middle" font-size="7" fill="#fff" font-weight="700">G1</text>
+        <text x="307" y="372" text-anchor="middle" font-size="6.5" fill="#8e44ad" font-weight="500">HDMI + ström till Switch</text>
+
+        <!-- G2 mark -->
+        <circle cx="472" cy="387" r="8" fill="#9b59b6" stroke="#8e44ad" stroke-width="1.5"/>
+        <text x="472" y="390" text-anchor="middle" font-size="7" fill="#fff" font-weight="700">G2</text>
+        <text x="472" y="372" text-anchor="middle" font-size="6.5" fill="#8e44ad" font-weight="500">HDMI + ljud till receiver</text>
+
+        <!-- Ventilation hole above teknikskåp -->
+        <circle cx="160" cy="387" r="5" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="2,2"/>
+        <text x="160" y="372" text-anchor="middle" font-size="6" fill="#999">Vent.</text>
+
+      </svg>
+    </div>
+
+  </div>
+
   <!-- SAMMANFATTNING -->
   <div class="plan-section">
     <h2>Elplan — sammanfattning</h2>
@@ -378,7 +2040,7 @@
           <td><strong>K</strong></td>
           <td>Höger vägg, golv</td>
           <td>Kopplingsdosa</td>
-          <td>Matning — ersätter befintligt uttag. Alla kablar utgår härifrån.</td>
+          <td>Befintligt vägguttag byts till kopplingsdosa — stickpropp får ej plats bakom mediaenheten. Elen dras vidare härifrån.</td>
           <td><span class="tag tag-required">Krävs</span></td>
         </tr>
         <tr>
@@ -470,7 +2132,7 @@
         <tr><th>Artikel</th><th>Antal</th><th>Anmärkning</th></tr>
       </thead>
       <tbody>
-        <tr><td>Kopplingsdosa (ersätter befintligt uttag)</td><td>1</td><td>Höger vägg, golv</td></tr>
+        <tr><td>Kopplingsdosa (ersätter befintligt vägguttag)</td><td>1</td><td>Höger vägg, golv. Stickpropp ryms ej bakom mediaenheten — omvandla till kopplingsdosa med skarvklämmor (t.ex. Wago 221).</td></tr>
         <tr><td>Infällt kombiuttag Schuko + USB-C (mörk platta)</td><td>2</td><td>U1, U2 — i passbit. Kolla infällningsdjup mot passbitens tjocklek.</td></tr>
         <tr><td>Infällt dubbeluttag 2x Schuko</td><td>3</td><td>U3, U4, U5 — i underskåp</td></tr>
         <tr><td>Infällt enkeluttag Schuko</td><td>1</td><td>F1 — bakom panel (lampa)</td></tr>
